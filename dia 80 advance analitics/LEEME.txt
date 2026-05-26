@@ -1,0 +1,29 @@
+DIA 80 - Dr Semmelweis (como ejecutar el notebook)
+==================================================
+
+PROBLEMA: "No module named 'pandas'" o "pd is not defined"
+CAUSA: El notebook usaba un kernel de Python sin las librerias.
+
+SOLUCION (3 pasos en Cursor/VS Code):
+-------------------------------------
+1. Abre esta carpeta o el notebook .ipynb
+
+2. Arriba a la derecha del notebook, clic en "Select Kernel"
+   -> Elige:  Python (dia 80 Semmelweis)
+   (NO elijas ".venv" generico ni "Python 3.x" sin nombre)
+
+3. Menu del notebook: "Restart Kernel"
+   Luego: "Run All"  (o ejecuta celda por celda desde arriba)
+
+Primera celda de codigo (SETUP): comprueba e instala paquetes si faltan.
+Segunda celda de codigo (imports): import pandas, numpy, plotly, etc.
+
+Si el kernel correcto no aparece:
+  En terminal PowerShell, desde esta carpeta:
+
+    .\venv\Scripts\python.exe -m ipykernel install --user --name=semmelweis-day80 --display-name="Python (dia 80 Semmelweis)"
+
+  Cierra y vuelve a abrir el notebook.
+
+Verificar entorno (opcional):
+    .\venv\Scripts\python.exe verificar_entorno.py

@@ -1,0 +1,16 @@
+body {
+  background-color: #212529 !important; /* similar a Bootstrap bg-dark */
+  color: #fff;
+}
+
+a {
+  color: #ffc107;
+}
+
+a:hover {
+  color: #ffcd39;
+}
+
+.space-above {
+  margin-top: 1.25rem;
+}

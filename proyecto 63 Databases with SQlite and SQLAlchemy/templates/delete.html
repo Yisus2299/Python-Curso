@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Delete Book</title>
+  </head>
+  <body>
+    <h1>Delete book</h1>
+    <p>
+      ¿Seguro que quieres eliminar
+      <strong>{{ book.title }}</strong> de {{ book.author }} ({{ book.rating }}/10)?
+    </p>
+
+    <form method="POST" action="{{ url_for('delete', book_id=book_id) }}">
+      <button type="submit">Yes, delete</button>
+    </form>
+
+    <p><a href="{{ url_for('home') }}">Cancel</a></p>
+  </body>
+</html>

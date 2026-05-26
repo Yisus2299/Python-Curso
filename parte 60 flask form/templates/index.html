@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 2rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #fff;
+            max-width: 32rem;
+        }
+
+        .field {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0.85rem 0;
+        }
+        .field label {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #9a9a9a;
+            margin-bottom: 0.35rem;
+        }
+        .field.message label {
+            color: #2a9d9d;
+        }
+        .field input,
+        .field textarea {
+            display: block;
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.35rem;
+            color: #333;
+            padding: 0;
+        }
+        .field textarea {
+            min-height: 5rem;
+            resize: vertical;
+        }
+
+        button.send {
+            margin-top: 1.75rem;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            background: #1f6f6f;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        button.send:hover {
+            filter: brightness(1.08);
+        }
+
+        .exito {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #111;
+        }
+    </style>
+</head>
+<body>
+    {% if exito %}
+        <p class="exito">Successfully sent your message</p>
+    {% else %}
+        <form method="post" action="{{ url_for('home') }}">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+            </div>
+            <div class="field message">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="send">Send</button>
+        </form>
+    {% endif %}
+</body>
+</html>
