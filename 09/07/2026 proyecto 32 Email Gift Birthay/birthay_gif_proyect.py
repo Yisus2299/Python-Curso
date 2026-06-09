@@ -103,20 +103,10 @@ try:
             msg["To"] = email
             msg["Subject"] = f"Para {nombre} en su dia unico y especial 🎉🌙💛🌻🌸"
             msg.set_content(
-                f"Ejem, Holis {nombre},\n\n"
-                "Ya dejando las formalidades. FELIZ CUMPLEAÑOOOOS MI NIÑA PRECIOSAAA HOY EN TU DIA ESPECIAAAAL\n"
-                "La fecha en la que escribi este correo fue el 15-04-2026 (jsj si, si lo recuerdas yo programe este correo en codigo) no se cuantas cosas hayan pasado desde entonces, espero hayamos conseguido gran parte de lo que queremos y que todo sea mejor, se que es y sera asi.\n"
-                "Solo el universo entero sabe perfectamente cuando te amo y lo mucho que todos los dias le pido por ti. Todo lo que mi vida ha cambiado desde que te conoci para bien y lo mucho que haces girar mi mundo entero, y lo mucho que deseo que formes parte de el eternamente. Se que sera asi.\n"
-                "Me encanta pasar todos los dias contigo, cada momento es un regalo, cada hora/minuto/segundo. Amo cada parte de ti, cada pensamiento, cada observacion, cada punto. Quizas cosas que pienses que no le gustarian a nadie de ti, a mi me encantan\n"
-                "Tus entidades me parecen unas personas muy agradables, son simplemente geniales y agradezco haber conocido a muchas en lo que va de tiempo. Espero que cuando lean esto, haya conocido a mas y mas; por mientras, que les puedo decir que ya no les haya dicho de momento, son personas magnificas con un universo entero por explorar que espero jamas dejar de conocer y que tengan plena confianza en nosotros. Los aprecio a todos sin igual\n"
-                "Se que quizas haya momentos en donde nada sea como pensamos, donde quizas muchas veces pensemos que no podremos y que realmente no sabemos como continuar. Pero si eso sucede, quiero que sepas que siempre sere tu piedra de apoyo y si no sabes que hacer tratare de ayudarte guiandote, dando opiniones o estando alli para ti incluso cuando sientas que no hay nadie que puede entenderte y estes sola en tu cuarto. Alli estare sin importar que\n"
-                "Es ironico que muchas cosas se pudieran haber adelantado incluso por mucho tiempo si tan solo nos hubieramos pedido un consejo de amor; pero, no me arrepiento de nada, ahora estamos juntos y siempre estare para ti\n"
-                "Gracias por todos los regalos, las palabras, los pensamientos, las opiniones, los momentos y los recuerdos que nos quedan y hemos creado en todo este tiempo. Son cosas que mejoraran en un futuro\n"
-                "Aunque quisiera poder adelantar el tiempo, el orden de las cosas pasa por algo. Tal como dice anteriormente, solo Dios y el universo saben cuanto pido por ti, por tu salud, por tus logros/metas/deseos. Estare alli para lograr todo juntos y para crear eso que siempre quisimos; una famikia, romper el molde, ser diferentes, tener nuestras empresas y poder lograr todo lo que algun dia todos nos dieron la espalda.\n"
-                "Sin nada mas que decir, Te amo Alekk, mi Isis, my Moon. Feliz cupleaños mi niña preciosa y espero lo pases y estes pasando excelente cuando recibas este correo algo simple quizas jsj. Gracias por todo y te lo recompenzare siempre\n\n"
-                "Nuestro amor es como el viento, no puedo verlo, pero sí sentirlo — Nicholas Sparks\n"
-                "Quiero hacer contigo lo que la primavera hace con los cerezos. Querer renovarte, llenarte de vida y belleza por la eternidad - Pablo Nebura\n\n"
-                "Con cariño, tu Zyran<3\n"
+                f"Hola {nombre},\n\n"
+                f"Happy birthday, {nombre}! 🎉🎂\n\n"
+                f"Que tengas un día maravilloso y que todos tus deseos se cumplan.\n\n"
+                f"Con cariño, Jesus\n"
             )
 
             smtp.send_message(msg)
