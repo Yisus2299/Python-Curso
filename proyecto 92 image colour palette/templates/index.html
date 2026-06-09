@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Extraer Colores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #f7f7f7;
+            color: #333;
+        }
+        h1 { text-align: center; }
+        form { margin: 20px 0; text-align: center; }
+        input[type="file"] { margin-bottom: 12px; }
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
+            gap: 14px;
+        }
+        .swatch {
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            overflow: hidden;
+            text-align: center;
+            background: white;
+        }
+        .swatch-color {
+            height: 100px;
+        }
+        .swatch-code {
+            padding: 12px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get the most common colors</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <br>
+        <button type="submit">Upload Image</button>
+    </form>
+
+    {% if colors %}
+        <h2>Colors extracted from: {{ filename }}</h2>
+        <div class="palette">
+            {% for color in colors %}
+                <div class="swatch">
+                    <div class="swatch-color" style="background: {{ color }}"></div>
+                    <div class="swatch-code">{{ color }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,155 @@
+2026-06-05 21:51:50,615 INFO Using downloads path: C:\Users\ImKen\Downloads
+2026-06-05 21:51:50,617 INFO DRY: move C:\Users\ImKen\Downloads\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx -> C:\Users\ImKen\Downloads\Documents\2026-03-26\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx
+2026-06-05 21:51:50,618 INFO DRY: move C:\Users\ImKen\Downloads\bbf713d9132f04af215cf61066fd7c16.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\bbf713d9132f04af215cf61066fd7c16.jpg
+2026-06-05 21:51:50,618 INFO DRY: move C:\Users\ImKen\Downloads\BraveBrowserSetup-BRV011.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\BraveBrowserSetup-BRV011.exe
+2026-06-05 21:51:50,619 INFO DRY: move C:\Users\ImKen\Downloads\Carta a Zyran 20 marzo 2026.pdf -> C:\Users\ImKen\Downloads\Documents\2026-04-04\Carta a Zyran 20 marzo 2026.pdf
+2026-06-05 21:51:50,620 INFO DRY: move C:\Users\ImKen\Downloads\Chinatown New York City.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\Chinatown New York City.jpg
+2026-06-05 21:51:50,620 INFO DRY: move C:\Users\ImKen\Downloads\content.png -> C:\Users\ImKen\Downloads\Images\2026-04-16\content.png
+2026-06-05 21:51:50,621 INFO DRY: move C:\Users\ImKen\Downloads\CursorUserSetup-x64-2.6.20.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-17\CursorUserSetup-x64-2.6.20.exe
+2026-06-05 21:51:50,621 INFO DRY: move C:\Users\ImKen\Downloads\descarga.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\descarga.jpg
+2026-06-05 21:51:50,622 INFO DRY: move C:\Users\ImKen\Downloads\desktop.ini -> C:\Users\ImKen\Downloads\Others\2026-03-03\desktop.ini
+2026-06-05 21:51:50,623 INFO DRY: move C:\Users\ImKen\Downloads\DiscordSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DiscordSetup.exe
+2026-06-05 21:51:50,623 INFO DRY: move C:\Users\ImKen\Downloads\discord_backup_codes.txt -> C:\Users\ImKen\Downloads\Documents\2026-04-06\discord_backup_codes.txt
+2026-06-05 21:51:50,624 INFO DRY: move C:\Users\ImKen\Downloads\DTLite1240-2391.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DTLite1240-2391.exe
+2026-06-05 21:51:50,625 INFO DRY: move C:\Users\ImKen\Downloads\FB_IMG_1778126192670.jpg -> C:\Users\ImKen\Downloads\Images\2026-05-14\FB_IMG_1778126192670.jpg
+2026-06-05 21:51:50,625 INFO DRY: move C:\Users\ImKen\Downloads\gto.jpg -> C:\Users\ImKen\Downloads\Images\2026-03-12\gto.jpg
+2026-06-05 21:51:50,626 INFO DRY: move C:\Users\ImKen\Downloads\hola me llamo zyran.txt -> C:\Users\ImKen\Downloads\Documents\2026-05-30\hola me llamo zyran.txt
+2026-06-05 21:51:50,627 INFO DRY: move C:\Users\ImKen\Downloads\idman642build63.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-21\idman642build63.exe
+2026-06-05 21:51:50,627 INFO DRY: move C:\Users\ImKen\Downloads\image.png -> C:\Users\ImKen\Downloads\Images\2026-04-14\image.png
+2026-06-05 21:51:50,628 INFO DRY: move C:\Users\ImKen\Downloads\iriun-webcam-2-9-2.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-04\iriun-webcam-2-9-2.exe
+2026-06-05 21:51:50,629 INFO DRY: move C:\Users\ImKen\Downloads\LEGO+Notebook+and+Data+(start).zip -> C:\Users\ImKen\Downloads\Archives\2026-05-22\LEGO+Notebook+and+Data+(start).zip
+2026-06-05 21:51:50,629 INFO DRY: move C:\Users\ImKen\Downloads\lghub_installer.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-12\lghub_installer.exe
+2026-06-05 21:51:50,630 INFO DRY: move C:\Users\ImKen\Downloads\linkl.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\linkl.jpg
+2026-06-05 21:51:50,630 INFO DRY: move C:\Users\ImKen\Downloads\MSIAfterburnerSetup.zip -> C:\Users\ImKen\Downloads\Archives\2026-03-10\MSIAfterburnerSetup.zip
+2026-06-05 21:51:50,631 INFO DRY: move C:\Users\ImKen\Downloads\NVIDIA_app_v11.0.6.383.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\NVIDIA_app_v11.0.6.383.exe
+2026-06-05 21:51:50,631 INFO DRY: move C:\Users\ImKen\Downloads\python-manager-26.0.msix -> C:\Users\ImKen\Downloads\Installers\2026-03-17\python-manager-26.0.msix
+2026-06-05 21:51:50,631 INFO DRY: move C:\Users\ImKen\Downloads\SteamSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\SteamSetup.exe
+2026-06-05 21:51:50,632 INFO DRY: move C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg
+2026-06-05 21:51:50,632 INFO DRY: move C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg
+2026-06-05 21:51:50,633 INFO DRY: move C:\Users\ImKen\Downloads\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe
+2026-06-05 21:51:50,633 INFO DRY: move C:\Users\ImKen\Downloads\winrar-x64-720es.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\winrar-x64-720es.exe
+2026-06-05 21:51:50,633 INFO Done organizing C:\Users\ImKen\Downloads
+2026-06-05 21:55:09,891 INFO Using downloads path: C:\Users\ImKen\Downloads
+2026-06-05 21:55:09,892 INFO DRY: move C:\Users\ImKen\Downloads\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx -> C:\Users\ImKen\Downloads\Documents\2026-03-26\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx
+2026-06-05 21:55:09,892 INFO DRY: move C:\Users\ImKen\Downloads\bbf713d9132f04af215cf61066fd7c16.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\bbf713d9132f04af215cf61066fd7c16.jpg
+2026-06-05 21:55:09,892 INFO DRY: move C:\Users\ImKen\Downloads\BraveBrowserSetup-BRV011.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\BraveBrowserSetup-BRV011.exe
+2026-06-05 21:55:09,893 INFO DRY: move C:\Users\ImKen\Downloads\Carta a Zyran 20 marzo 2026.pdf -> C:\Users\ImKen\Downloads\Documents\2026-04-04\Carta a Zyran 20 marzo 2026.pdf
+2026-06-05 21:55:09,893 INFO DRY: move C:\Users\ImKen\Downloads\Chinatown New York City.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\Chinatown New York City.jpg
+2026-06-05 21:55:09,893 INFO DRY: move C:\Users\ImKen\Downloads\content.png -> C:\Users\ImKen\Downloads\Images\2026-04-16\content.png
+2026-06-05 21:55:09,894 INFO DRY: move C:\Users\ImKen\Downloads\CursorUserSetup-x64-2.6.20.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-17\CursorUserSetup-x64-2.6.20.exe
+2026-06-05 21:55:09,894 INFO DRY: move C:\Users\ImKen\Downloads\descarga.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\descarga.jpg
+2026-06-05 21:55:09,894 INFO DRY: move C:\Users\ImKen\Downloads\desktop.ini -> C:\Users\ImKen\Downloads\Others\2026-03-03\desktop.ini
+2026-06-05 21:55:09,895 INFO DRY: move C:\Users\ImKen\Downloads\DiscordSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DiscordSetup.exe
+2026-06-05 21:55:09,895 INFO DRY: move C:\Users\ImKen\Downloads\discord_backup_codes.txt -> C:\Users\ImKen\Downloads\Documents\2026-04-06\discord_backup_codes.txt
+2026-06-05 21:55:09,895 INFO DRY: move C:\Users\ImKen\Downloads\DTLite1240-2391.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DTLite1240-2391.exe
+2026-06-05 21:55:09,896 INFO DRY: move C:\Users\ImKen\Downloads\FB_IMG_1778126192670.jpg -> C:\Users\ImKen\Downloads\Images\2026-05-14\FB_IMG_1778126192670.jpg
+2026-06-05 21:55:09,896 INFO DRY: move C:\Users\ImKen\Downloads\gto.jpg -> C:\Users\ImKen\Downloads\Images\2026-03-12\gto.jpg
+2026-06-05 21:55:09,897 INFO DRY: move C:\Users\ImKen\Downloads\hola me llamo zyran.txt -> C:\Users\ImKen\Downloads\Documents\2026-05-30\hola me llamo zyran.txt
+2026-06-05 21:55:09,897 INFO DRY: move C:\Users\ImKen\Downloads\idman642build63.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-21\idman642build63.exe
+2026-06-05 21:55:09,897 INFO DRY: move C:\Users\ImKen\Downloads\image.png -> C:\Users\ImKen\Downloads\Images\2026-04-14\image.png
+2026-06-05 21:55:09,898 INFO DRY: move C:\Users\ImKen\Downloads\iriun-webcam-2-9-2.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-04\iriun-webcam-2-9-2.exe
+2026-06-05 21:55:09,898 INFO DRY: move C:\Users\ImKen\Downloads\LEGO+Notebook+and+Data+(start).zip -> C:\Users\ImKen\Downloads\Archives\2026-05-22\LEGO+Notebook+and+Data+(start).zip
+2026-06-05 21:55:09,898 INFO DRY: move C:\Users\ImKen\Downloads\lghub_installer.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-12\lghub_installer.exe
+2026-06-05 21:55:09,899 INFO DRY: move C:\Users\ImKen\Downloads\linkl.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\linkl.jpg
+2026-06-05 21:55:09,899 INFO DRY: move C:\Users\ImKen\Downloads\MSIAfterburnerSetup.zip -> C:\Users\ImKen\Downloads\Archives\2026-03-10\MSIAfterburnerSetup.zip
+2026-06-05 21:55:09,900 INFO DRY: move C:\Users\ImKen\Downloads\NVIDIA_app_v11.0.6.383.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\NVIDIA_app_v11.0.6.383.exe
+2026-06-05 21:55:09,900 INFO DRY: move C:\Users\ImKen\Downloads\python-manager-26.0.msix -> C:\Users\ImKen\Downloads\Installers\2026-03-17\python-manager-26.0.msix
+2026-06-05 21:55:09,900 INFO DRY: move C:\Users\ImKen\Downloads\SteamSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\SteamSetup.exe
+2026-06-05 21:55:09,901 INFO DRY: move C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg
+2026-06-05 21:55:09,901 INFO DRY: move C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg
+2026-06-05 21:55:09,902 INFO DRY: move C:\Users\ImKen\Downloads\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe
+2026-06-05 21:55:09,902 INFO DRY: move C:\Users\ImKen\Downloads\winrar-x64-720es.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\winrar-x64-720es.exe
+2026-06-05 21:55:09,902 INFO Done organizing C:\Users\ImKen\Downloads
+2026-06-05 21:55:18,815 INFO Using downloads path: C:\Users\ImKen\Downloads
+2026-06-05 21:55:18,816 INFO DRY: move C:\Users\ImKen\Downloads\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx -> C:\Users\ImKen\Downloads\Documents\2026-03-26\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx
+2026-06-05 21:55:18,817 INFO DRY: move C:\Users\ImKen\Downloads\bbf713d9132f04af215cf61066fd7c16.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\bbf713d9132f04af215cf61066fd7c16.jpg
+2026-06-05 21:55:18,817 INFO DRY: move C:\Users\ImKen\Downloads\BraveBrowserSetup-BRV011.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\BraveBrowserSetup-BRV011.exe
+2026-06-05 21:55:18,818 INFO DRY: move C:\Users\ImKen\Downloads\Carta a Zyran 20 marzo 2026.pdf -> C:\Users\ImKen\Downloads\Documents\2026-04-04\Carta a Zyran 20 marzo 2026.pdf
+2026-06-05 21:55:18,818 INFO DRY: move C:\Users\ImKen\Downloads\Chinatown New York City.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\Chinatown New York City.jpg
+2026-06-05 21:55:18,819 INFO DRY: move C:\Users\ImKen\Downloads\content.png -> C:\Users\ImKen\Downloads\Images\2026-04-16\content.png
+2026-06-05 21:55:18,819 INFO DRY: move C:\Users\ImKen\Downloads\CursorUserSetup-x64-2.6.20.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-17\CursorUserSetup-x64-2.6.20.exe
+2026-06-05 21:55:18,819 INFO DRY: move C:\Users\ImKen\Downloads\descarga.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\descarga.jpg
+2026-06-05 21:55:18,819 INFO DRY: move C:\Users\ImKen\Downloads\desktop.ini -> C:\Users\ImKen\Downloads\Others\2026-03-03\desktop.ini
+2026-06-05 21:55:18,820 INFO DRY: move C:\Users\ImKen\Downloads\DiscordSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DiscordSetup.exe
+2026-06-05 21:55:18,820 INFO DRY: move C:\Users\ImKen\Downloads\discord_backup_codes.txt -> C:\Users\ImKen\Downloads\Documents\2026-04-06\discord_backup_codes.txt
+2026-06-05 21:55:18,820 INFO DRY: move C:\Users\ImKen\Downloads\DTLite1240-2391.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DTLite1240-2391.exe
+2026-06-05 21:55:18,821 INFO DRY: move C:\Users\ImKen\Downloads\FB_IMG_1778126192670.jpg -> C:\Users\ImKen\Downloads\Images\2026-05-14\FB_IMG_1778126192670.jpg
+2026-06-05 21:55:18,821 INFO DRY: move C:\Users\ImKen\Downloads\gto.jpg -> C:\Users\ImKen\Downloads\Images\2026-03-12\gto.jpg
+2026-06-05 21:55:18,822 INFO DRY: move C:\Users\ImKen\Downloads\hola me llamo zyran.txt -> C:\Users\ImKen\Downloads\Documents\2026-05-30\hola me llamo zyran.txt
+2026-06-05 21:55:18,822 INFO DRY: move C:\Users\ImKen\Downloads\idman642build63.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-21\idman642build63.exe
+2026-06-05 21:55:18,822 INFO DRY: move C:\Users\ImKen\Downloads\image.png -> C:\Users\ImKen\Downloads\Images\2026-04-14\image.png
+2026-06-05 21:55:18,823 INFO DRY: move C:\Users\ImKen\Downloads\iriun-webcam-2-9-2.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-04\iriun-webcam-2-9-2.exe
+2026-06-05 21:55:18,823 INFO DRY: move C:\Users\ImKen\Downloads\LEGO+Notebook+and+Data+(start).zip -> C:\Users\ImKen\Downloads\Archives\2026-05-22\LEGO+Notebook+and+Data+(start).zip
+2026-06-05 21:55:18,823 INFO DRY: move C:\Users\ImKen\Downloads\lghub_installer.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-12\lghub_installer.exe
+2026-06-05 21:55:18,824 INFO DRY: move C:\Users\ImKen\Downloads\linkl.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\linkl.jpg
+2026-06-05 21:55:18,824 INFO DRY: move C:\Users\ImKen\Downloads\MSIAfterburnerSetup.zip -> C:\Users\ImKen\Downloads\Archives\2026-03-10\MSIAfterburnerSetup.zip
+2026-06-05 21:55:18,824 INFO DRY: move C:\Users\ImKen\Downloads\NVIDIA_app_v11.0.6.383.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\NVIDIA_app_v11.0.6.383.exe
+2026-06-05 21:55:18,825 INFO DRY: move C:\Users\ImKen\Downloads\python-manager-26.0.msix -> C:\Users\ImKen\Downloads\Installers\2026-03-17\python-manager-26.0.msix
+2026-06-05 21:55:18,825 INFO DRY: move C:\Users\ImKen\Downloads\SteamSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\SteamSetup.exe
+2026-06-05 21:55:18,825 INFO DRY: move C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg
+2026-06-05 21:55:18,826 INFO DRY: move C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg
+2026-06-05 21:55:18,826 INFO DRY: move C:\Users\ImKen\Downloads\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe
+2026-06-05 21:55:18,826 INFO DRY: move C:\Users\ImKen\Downloads\winrar-x64-720es.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\winrar-x64-720es.exe
+2026-06-05 21:55:18,827 INFO Done organizing C:\Users\ImKen\Downloads
+2026-06-05 21:55:58,689 INFO Using downloads path: C:\Users\ImKen\Downloads
+2026-06-05 21:55:58,690 INFO DRY: move C:\Users\ImKen\Downloads\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx -> C:\Users\ImKen\Downloads\Documents\2026-03-26\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx
+2026-06-05 21:55:58,690 INFO DRY: move C:\Users\ImKen\Downloads\bbf713d9132f04af215cf61066fd7c16.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\bbf713d9132f04af215cf61066fd7c16.jpg
+2026-06-05 21:55:58,691 INFO DRY: move C:\Users\ImKen\Downloads\BraveBrowserSetup-BRV011.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\BraveBrowserSetup-BRV011.exe
+2026-06-05 21:55:58,691 INFO DRY: move C:\Users\ImKen\Downloads\Carta a Zyran 20 marzo 2026.pdf -> C:\Users\ImKen\Downloads\Documents\2026-04-04\Carta a Zyran 20 marzo 2026.pdf
+2026-06-05 21:55:58,691 INFO DRY: move C:\Users\ImKen\Downloads\Chinatown New York City.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\Chinatown New York City.jpg
+2026-06-05 21:55:58,692 INFO DRY: move C:\Users\ImKen\Downloads\content.png -> C:\Users\ImKen\Downloads\Images\2026-04-16\content.png
+2026-06-05 21:55:58,692 INFO DRY: move C:\Users\ImKen\Downloads\CursorUserSetup-x64-2.6.20.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-17\CursorUserSetup-x64-2.6.20.exe
+2026-06-05 21:55:58,692 INFO DRY: move C:\Users\ImKen\Downloads\descarga.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\descarga.jpg
+2026-06-05 21:55:58,693 INFO DRY: move C:\Users\ImKen\Downloads\desktop.ini -> C:\Users\ImKen\Downloads\Others\2026-03-03\desktop.ini
+2026-06-05 21:55:58,693 INFO DRY: move C:\Users\ImKen\Downloads\DiscordSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DiscordSetup.exe
+2026-06-05 21:55:58,694 INFO DRY: move C:\Users\ImKen\Downloads\discord_backup_codes.txt -> C:\Users\ImKen\Downloads\Documents\2026-04-06\discord_backup_codes.txt
+2026-06-05 21:55:58,694 INFO DRY: move C:\Users\ImKen\Downloads\DTLite1240-2391.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DTLite1240-2391.exe
+2026-06-05 21:55:58,695 INFO DRY: move C:\Users\ImKen\Downloads\FB_IMG_1778126192670.jpg -> C:\Users\ImKen\Downloads\Images\2026-05-14\FB_IMG_1778126192670.jpg
+2026-06-05 21:55:58,695 INFO DRY: move C:\Users\ImKen\Downloads\gto.jpg -> C:\Users\ImKen\Downloads\Images\2026-03-12\gto.jpg
+2026-06-05 21:55:58,696 INFO DRY: move C:\Users\ImKen\Downloads\hola me llamo zyran.txt -> C:\Users\ImKen\Downloads\Documents\2026-05-30\hola me llamo zyran.txt
+2026-06-05 21:55:58,696 INFO DRY: move C:\Users\ImKen\Downloads\idman642build63.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-21\idman642build63.exe
+2026-06-05 21:55:58,697 INFO DRY: move C:\Users\ImKen\Downloads\image.png -> C:\Users\ImKen\Downloads\Images\2026-04-14\image.png
+2026-06-05 21:55:58,697 INFO DRY: move C:\Users\ImKen\Downloads\iriun-webcam-2-9-2.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-04\iriun-webcam-2-9-2.exe
+2026-06-05 21:55:58,698 INFO DRY: move C:\Users\ImKen\Downloads\LEGO+Notebook+and+Data+(start).zip -> C:\Users\ImKen\Downloads\Archives\2026-05-22\LEGO+Notebook+and+Data+(start).zip
+2026-06-05 21:55:58,698 INFO DRY: move C:\Users\ImKen\Downloads\lghub_installer.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-12\lghub_installer.exe
+2026-06-05 21:55:58,698 INFO DRY: move C:\Users\ImKen\Downloads\linkl.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\linkl.jpg
+2026-06-05 21:55:58,699 INFO DRY: move C:\Users\ImKen\Downloads\MSIAfterburnerSetup.zip -> C:\Users\ImKen\Downloads\Archives\2026-03-10\MSIAfterburnerSetup.zip
+2026-06-05 21:55:58,699 INFO DRY: move C:\Users\ImKen\Downloads\NVIDIA_app_v11.0.6.383.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\NVIDIA_app_v11.0.6.383.exe
+2026-06-05 21:55:58,700 INFO DRY: move C:\Users\ImKen\Downloads\python-manager-26.0.msix -> C:\Users\ImKen\Downloads\Installers\2026-03-17\python-manager-26.0.msix
+2026-06-05 21:55:58,700 INFO DRY: move C:\Users\ImKen\Downloads\SteamSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\SteamSetup.exe
+2026-06-05 21:55:58,701 INFO DRY: move C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg
+2026-06-05 21:55:58,701 INFO DRY: move C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg
+2026-06-05 21:55:58,702 INFO DRY: move C:\Users\ImKen\Downloads\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe
+2026-06-05 21:55:58,702 INFO DRY: move C:\Users\ImKen\Downloads\winrar-x64-720es.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\winrar-x64-720es.exe
+2026-06-05 21:55:58,702 INFO Done organizing C:\Users\ImKen\Downloads
+2026-06-05 21:56:09,155 INFO Using downloads path: C:\Users\ImKen\Downloads
+2026-06-05 21:56:09,156 INFO Moved C:\Users\ImKen\Downloads\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx -> C:\Users\ImKen\Downloads\Documents\2026-03-26\002 HOJA DE DATOS PASTOR Y ASISTENTE PASTORAL  2026-1.docx
+2026-06-05 21:56:09,157 INFO Moved C:\Users\ImKen\Downloads\bbf713d9132f04af215cf61066fd7c16.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\bbf713d9132f04af215cf61066fd7c16.jpg
+2026-06-05 21:56:09,158 INFO Moved C:\Users\ImKen\Downloads\BraveBrowserSetup-BRV011.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\BraveBrowserSetup-BRV011.exe
+2026-06-05 21:56:09,158 INFO Moved C:\Users\ImKen\Downloads\Carta a Zyran 20 marzo 2026.pdf -> C:\Users\ImKen\Downloads\Documents\2026-04-04\Carta a Zyran 20 marzo 2026.pdf
+2026-06-05 21:56:09,159 INFO Moved C:\Users\ImKen\Downloads\Chinatown New York City.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-04\Chinatown New York City.jpg
+2026-06-05 21:56:09,161 INFO Moved C:\Users\ImKen\Downloads\content.png -> C:\Users\ImKen\Downloads\Images\2026-04-16\content.png
+2026-06-05 21:56:09,161 INFO Moved C:\Users\ImKen\Downloads\CursorUserSetup-x64-2.6.20.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-17\CursorUserSetup-x64-2.6.20.exe
+2026-06-05 21:56:09,162 INFO Moved C:\Users\ImKen\Downloads\descarga.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\descarga.jpg
+2026-06-05 21:56:09,163 INFO Moved C:\Users\ImKen\Downloads\desktop.ini -> C:\Users\ImKen\Downloads\Others\2026-03-03\desktop.ini
+2026-06-05 21:56:09,163 INFO Moved C:\Users\ImKen\Downloads\DiscordSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DiscordSetup.exe
+2026-06-05 21:56:09,164 INFO Moved C:\Users\ImKen\Downloads\discord_backup_codes.txt -> C:\Users\ImKen\Downloads\Documents\2026-04-06\discord_backup_codes.txt
+2026-06-05 21:56:09,165 INFO Moved C:\Users\ImKen\Downloads\DTLite1240-2391.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\DTLite1240-2391.exe
+2026-06-05 21:56:09,166 INFO Moved C:\Users\ImKen\Downloads\FB_IMG_1778126192670.jpg -> C:\Users\ImKen\Downloads\Images\2026-05-14\FB_IMG_1778126192670.jpg
+2026-06-05 21:56:09,167 INFO Moved C:\Users\ImKen\Downloads\gto.jpg -> C:\Users\ImKen\Downloads\Images\2026-03-12\gto.jpg
+2026-06-05 21:56:09,167 INFO Moved C:\Users\ImKen\Downloads\hola me llamo zyran.txt -> C:\Users\ImKen\Downloads\Documents\2026-05-30\hola me llamo zyran.txt
+2026-06-05 21:56:09,168 INFO Moved C:\Users\ImKen\Downloads\idman642build63.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-21\idman642build63.exe
+2026-06-05 21:56:09,169 INFO Moved C:\Users\ImKen\Downloads\image.png -> C:\Users\ImKen\Downloads\Images\2026-04-14\image.png
+2026-06-05 21:56:09,169 INFO Moved C:\Users\ImKen\Downloads\iriun-webcam-2-9-2.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-04\iriun-webcam-2-9-2.exe
+2026-06-05 21:56:09,170 INFO Moved C:\Users\ImKen\Downloads\LEGO+Notebook+and+Data+(start).zip -> C:\Users\ImKen\Downloads\Archives\2026-05-22\LEGO+Notebook+and+Data+(start).zip
+2026-06-05 21:56:09,171 INFO Moved C:\Users\ImKen\Downloads\lghub_installer.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-12\lghub_installer.exe
+2026-06-05 21:56:09,172 INFO Moved C:\Users\ImKen\Downloads\linkl.jpg -> C:\Users\ImKen\Downloads\Images\2026-04-02\linkl.jpg
+2026-06-05 21:56:09,172 INFO Moved C:\Users\ImKen\Downloads\MSIAfterburnerSetup.zip -> C:\Users\ImKen\Downloads\Archives\2026-03-10\MSIAfterburnerSetup.zip
+2026-06-05 21:56:09,173 INFO Moved C:\Users\ImKen\Downloads\NVIDIA_app_v11.0.6.383.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\NVIDIA_app_v11.0.6.383.exe
+2026-06-05 21:56:09,174 INFO Moved C:\Users\ImKen\Downloads\python-manager-26.0.msix -> C:\Users\ImKen\Downloads\Installers\2026-03-17\python-manager-26.0.msix
+2026-06-05 21:56:09,175 INFO Moved C:\Users\ImKen\Downloads\SteamSetup.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\SteamSetup.exe
+2026-06-05 21:56:09,175 INFO Moved C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 5.49.38 PM.jpeg
+2026-06-05 21:56:09,176 INFO Moved C:\Users\ImKen\Downloads\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg -> C:\Users\ImKen\Downloads\Images\2026-03-26\WhatsApp Image 2026-03-26 at 6.04.45 PM.jpeg
+2026-06-05 21:56:09,177 INFO Moved C:\Users\ImKen\Downloads\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\whql-amd-software-adrenalin-edition-26.1.1-win11-jan-vega-polaris.exe
+2026-06-05 21:56:09,177 INFO Moved C:\Users\ImKen\Downloads\winrar-x64-720es.exe -> C:\Users\ImKen\Downloads\Installers\2026-03-03\winrar-x64-720es.exe
+2026-06-05 21:56:09,177 INFO Done organizing C:\Users\ImKen\Downloads
