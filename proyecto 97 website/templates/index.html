@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="hero">
+    <div>
+      <h1>Welcome to the Flask E-Commerce Store</h1>
+      <p>Browse products, add to cart, register, and checkout with Stripe.</p>
+    </div>
+  </section>
+  <section class="product-grid">
+    {% for product in products %}
+      <article class="product-card">
+        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" />
+        <div class="product-body">
+          <h2>{{ product.name }}</h2>
+          <p>{{ product.description }}</p>
+          <div class="product-meta">
+            <strong>{{ product.price_display }}</strong>
+            <a class="button" href="{{ url_for('add_to_cart', product_id=product.id) }}">Add to Cart</a>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+{% endblock %}

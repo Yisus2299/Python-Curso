@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Dangerous Writing</title>
+  <style>
+    body {font-family: Arial; margin: 20px;}
+    textarea {width:100%; height:70vh; font-size:16px;}
+    #status {margin-top:8px;}
+  </style>
+</head>
+<body>
+  <label>Timeout:
+    <select id="timeout"><option>5</option><option>10</option></select> seconds
+  </label>
+  <div><textarea id="editor" placeholder="Type quickly..."></textarea></div>
+  <div id="status">Start typing</div>
+  <script>
+    const editor = document.getElementById('editor');
+    const status = document.getElementById('status');
+    const sel = document.getElementById('timeout');
+    let timeout = 5;
+    let timerId = null;
+
+    function resetTimer() {
+      clearTimeout(timerId);
+      timeout = Number(sel.value);
+      status.textContent = `Will delete after ${timeout}s of inactivity`;
+      timerId = setTimeout(()=> {
+        if (editor.value.length) {
+          editor.value = '';
+          status.textContent = 'Deleted due to inactivity';
+        }
+      }, timeout * 1000);
+    }
+
+    editor.addEventListener('input', resetTimer);
+    sel.addEventListener('change', resetTimer);
+    resetTimer();
+  </script>
+</body>
+</html>

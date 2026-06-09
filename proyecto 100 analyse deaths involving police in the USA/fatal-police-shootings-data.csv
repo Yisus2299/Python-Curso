@@ -1,0 +1,21 @@
+date,state,city,county_name,race,gender,age,manner_of_death,armed
+2015-01-02,CA,Los Angeles,Los Angeles,WHITE,M,42,shot,gun
+2015-03-10,TX,Dallas,Dallas,BLACK,M,28,shot,knife
+2015-05-15,NY,New York,New York,HISPANIC,M,34,shot,vehicle
+2016-07-22,FL,Miami,Miami- Dade,BLACK,M,19,shot,gun
+2016-11-30,IL,Chicago,Cook,HISPANIC,M,47,shot,gun
+2017-09-14,CA,San Francisco,San Francisco,ASIAN,M,31,shot,knife
+2017-12-01,TX,Houston,Harris,WHITE,F,29,shot,gun
+2018-04-08,NY,Buffalo,Erie,BLACK,M,45,shot,knife
+2018-08-19,FL,Orlando,Orange,HISPANIC,M,52,shot,gun
+2019-01-21,IL,Springfield,Sangamon,WHITE,M,33,shot,unarmed
+2019-06-03,CA,San Diego,San Diego,BLACK,M,36,shot,gun
+2019-10-27,TX,Austin,Travis,WHITE,F,22,shot,knife
+2020-02-17,NY,Albany,Albany,ASIAN,M,40,shot,gas
+2020-05-29,FL,Tampa,Hillsborough,HISPANIC,M,27,shot,gun
+2021-03-12,IL,Peoria,Peoria,BLACK,F,39,shot,knife
+2021-07-07,CA,Sacramento,Sacramento,WHITE,M,50,shot,gun
+2022-09-30,TX,El Paso,El Paso,HISPANIC,M,24,shot,gun
+2022-12-15,NY,Rochester,Monroe,BLACK,M,38,shot,knife
+2023-04-05,FL,Jacksonville,Duval,WHITE,M,44,shot,gun
+2023-11-09,IL,Champaign,Champaign,ASIAN,F,30,shot,unarmed

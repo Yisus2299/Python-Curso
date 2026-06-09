@@ -1,4 +1,5 @@
 {
   "python.defaultInterpreterPath": "${workspaceFolder}/dia 80 advance analitics/venv/Scripts/python.exe",
-  "jupyter.kernels.default": "semmelweis-day80"
+  "jupyter.kernels.default": "semmelweis-day80",
+  "python-envs.defaultEnvManager": "ms-python.python:system"
 }
