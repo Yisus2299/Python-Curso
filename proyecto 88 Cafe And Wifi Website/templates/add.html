@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Add Cafe{% endblock %}
+
+{% block content %}
+<div class="container pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h1 class="mb-4">Add a new cafe</h1>
+
+      <form method="POST" class="needs-validation">
+        <div class="mb-3">
+          <label for="name" class="form-label">Cafe name</label>
+          <input type="text" class="form-control bg-dark text-white border-secondary" id="name" name="name" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="map_url" class="form-label">Google Maps URL</label>
+          <input type="url" class="form-control bg-dark text-white border-secondary" id="map_url" name="map_url" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="img_url" class="form-label">Image URL</label>
+          <input type="url" class="form-control bg-dark text-white border-secondary" id="img_url" name="img_url" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="loc" class="form-label">Location (e.g. London, UK)</label>
+          <input type="text" class="form-control bg-dark text-white border-secondary" id="loc" name="loc" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="seats" class="form-label">Seats (e.g. 10-20 or 30+)</label>
+          <input type="text" class="form-control bg-dark text-white border-secondary" id="seats" name="seats" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="coffee_price" class="form-label">Coffee price (optional)</label>
+          <input type="text" class="form-control bg-dark text-white border-secondary" id="coffee_price" name="coffee_price" placeholder="2.50" />
+        </div>
+
+        <div class="mb-4">
+          <p class="form-label">Amenities</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="wifi" name="wifi" checked />
+            <label class="form-check-label" for="wifi">Has WiFi</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sockets" name="sockets" checked />
+            <label class="form-check-label" for="sockets">Has power sockets</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="toilet" name="toilet" />
+            <label class="form-check-label" for="toilet">Has toilet</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="calls" name="calls" />
+            <label class="form-check-label" for="calls">Can take calls</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-warning text-dark">Add cafe</button>
+        <a href="{{ url_for('home') }}" class="btn btn-outline-light ms-2">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
