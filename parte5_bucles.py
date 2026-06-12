@@ -1,69 +1,30 @@
-# ciclo For
+# For loop
 
-# nombres = [
-#     'Hey Isis',
-#     'Jesus te quiere',
-#     'DEMASIADOOOOO',
-#     r''' _
-#                 ,-""-,-"       "-,-""-,
-#                /,-' , .-'-.7.-'-. , '-,\
-#                \(    /  _     _  \    )/
-#                 '-,  { (0)   (0) }  ,-'
-#                  /    >  .---.  <    \
-#                 |/ .-'   \___/   '-. \|
-#                 {, /  ,_       _,  \ ,}
-#                 \ {,    \     /    ,} /
-#                  ',\.    '---'    ./,'
-#              _.-""""""-._     _.-""""""-._
-#            .'            `._.`            '.
-#          _/_               _                \
-#       .'`   `\            | |                \
-#      /        |           | |                 ;
-#      |        /           |_|                 |
-#      \  ;'---'    _    ___  _  _  ___         ;
-#       '. ;       | |  /   \| || ||  _|     _ ;
-#         `-\      | |_ | | || |/ /|  _|   .' `,
-#            `\    |___|\___/ \__/ |___|  |     \
-#              \            _ _           \     |
-#          jgs  `\         | | |         /`   _/
-#     ,-""-.    .'`\       | | |       /`-,-'` .-""-,
-#    /      `\.'    `\     \___/     /`    './`      \
-#   ;  .--.   \       '\           /'       /   .--.  ;
-#   | (    \   |,       '\       /'        |   /    ) |
-#    \ ;    }             ;\   /;         `   {    ; /
-#     `;\   \         _.-'  \ /  `-._         /   /;`
-#       \ \__.'   _.-'       Y       `-._    '.__//
-#        '.___,.-'                       `-.,___.'''''
-# ]
-# for nombre in nombres:
-#     print(nombre)
+# maximum score
+'''scores = [200,100,50,40,30,20,10,5,1]
+
+# create the variable starting at 0 that will compare and find the largest
+max_score = 0
+
+for score in scores:
+    # if 0 is less than 200,100,50,etc
+    if score > max_score:
+        # update max_score
+        max_score = score
+print(max_score) #200'''
 
 
-#puntaje maximo
-'''puntajes = [200,100,50,40,30,20,10,5,1]
-
-#creamos la variable desde 0 que va a ir comparando hasta ve el mayor
-puntaje_maximo = 0
-
-for puntaje in puntajes:
-    #si 0 es mayor a 200,100,50,etc
-    if puntaje > puntaje_maximo:
-        #200 = 0
-        puntaje_maximo = puntaje
-print(puntaje_maximo) #200'''
-
-
-#funcion Range
+# Range function
 
 '''total = 0
-for number in range (1,101):
-    total+=number
+for number in range(1, 101):
+    total += number
 print(total)'''
 
-#fizzbuzz
+# fizzbuzz
 
 '''
-for number in range(1,101):
+for number in range(1, 101):
     if number % 3 == 0:
         print("Fizz")
     elif number % 5 == 0:

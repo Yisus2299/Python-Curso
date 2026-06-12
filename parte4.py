@@ -1,18 +1,18 @@
 # import random
 
-#generar un numero del 1 al 10 aleatoriamente
+# generate a random number from 1 to 10
 """randomNumber = random.randint(1, 10)
 print(randomNumber)"""
 
-#genera un numero randoms con comas
+# generate a random number with decimals
 '''randomFloat = random.random() * 10
 print(randomFloat)'''
 
-#genera un numero float del 1 al 10
+# generate a float number from 1 to 10
 '''random_uni = random.uniform(1, 10)
 print(random_uni)'''
 
-#se usan para sacar varias opciones en condicionales
+# these are used to choose among different conditional options
 '''randomPractice = random.randint(0, 1)
 
 if randomPractice == 0:
@@ -20,28 +20,28 @@ if randomPractice == 0:
 else:
     print("tails")'''
 
-#listas, ejerrcicio quien paga la cuenta: 2 maneras de resolverlo
+# lists, bill payer exercise: 2 ways to solve it
 
 #import random
 
-#amigos = ["Jesus","Alekk","Abby"]
+#friends = ["Jesus","Alekk","Ryo"]
 
-#1 opcion, random.randint
-# cuenta = random.randint(0,2)
-# print(amigos[cuenta])
+# option 1, random.randint
+# count = random.randint(0,2)
+# print(friends[count])
 
-# 2 opcion, crear una variable y usar los if
-# cuenta = random.choice(amigos)
+# option 2, create a variable and use if statements
+# count = random.choice(friends)
 
-# if cuenta == "Jesus":
-#     print(F"{cuenta} debe pagar la cuenta")
-# elif cuenta == "Alekk":
-#     print(F"{cuenta} debe pagar la cuenta")
+# if count == "Jesus":
+#     print(F"{count} has to pay the bill")
+# elif count == "Alekk":
+#     print(F"{count} has to pay the bill")
 # else:
-#     print(F"{cuenta} debe pagar la cuenta")
+#     print(F"{count} has to pay the bill")
 
 
-#listas anidadas
+# nested lists
 # fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
 # vegetables = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
 # materials = ["spoons", "forks", "pots"]
