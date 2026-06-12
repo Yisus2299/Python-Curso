@@ -1,13 +1,13 @@
-#proyecto numero 10 - calculadora que decida operaciones y diga si quieres continuar o no
+# project number 10 - calculator that decides operations and asks if you want to continue or not
 
-#1- crea una funcion para sumar
+#1- create a function to add
 
 def add(n1, n2):
     return n1 + n2
 
-#2- escribe otras 3 funciones: substract. multiply y dividir.
+#2- write three other functions: subtract, multiply, and divide.
 
-def substract (n1,n2):
+def substract(n1,n2):
     return n1 - n2
 
 def multiply(n1,n2):
@@ -16,48 +16,48 @@ def multiply(n1,n2):
 def divide(n1,n2):
     return n1 / n2
 
-#3- agrega estas 4 funciones en in diccionario con los valores. Keys = "+", "-", "*", "/".
+#3- add these four functions to a dictionary with the values. Keys = "+", "-", "*", "/".
 
-operaciones = {
+operations = {
     "+": add,
     "-": substract,
     "*": multiply,
     "/": divide,
 }
 
-#4- usa el diccionario de operaciones para realizar calculos. Multiplicar 4 * 8 usando el diccionario a ver si funciona:
+#4- use the operations dictionary to perform calculations. Multiply 4 * 8 using the dictionary to see if it works:
 
-# print(operaciones["*"](n1 = 4, n2 = 8))
+# print(operations["*"](n1 = 4, n2 = 8))
 
-#5- pide al usuario introducir un numero, luego, crea un bucle for para recorrer todos los caracteres de las operaciones y simbolos
-# Esto para que el usuario pueda ver todos los simbolos disponibles. Luego, pide al usuario poner otro numero
+#5- ask the user to enter a number, then create a for loop to iterate through all the operation symbols
+# This is so the user can see all available symbols. Then ask the user to enter another number
 
-#6- debemos de crear otro bucle While por si quieres continuar y que este bucle acumule las cuentas en total y alli metes todo el bucle For previamente creado
+#6- we should create another while loop in case you want to continue and this loop should accumulate the total calculations and contain the for loop created earlier
 
-#7- debemos de almacenar todo en otro bucle pero como seria confuso, lo mejor que podemos hacer es crear una funcion de Calculo que lo almacene
+#7- we should wrap everything in another function but since that would be confusing, the best thing is to create a calculation function that stores it
 
 
-def calculo():
-    deberias_acumular = True
-    num1= float(input("Cual es el primer numero?: ")) #esta variable va afuera ya que almacena el numero y ademas, es la que inicia a su vez el bucle
+def calculate():
+    should_accumulate = True
+    num1= float(input("What is the first number?: ")) # this variable is outside because it stores the number and also starts the loop
 
-    while deberias_acumular:
-        for simbolo in operaciones: #esto proviene del diccionario
-            print(simbolo)
-        simbolo_elegir = input("Elige una operacion: ")
-        num2 = float(input("Cual es el siguiente?: "))
-        respuesta = operaciones[simbolo_elegir](num1, num2) # operaciones proviene del diccionario. Simbolo a elegir es de nuestro input y para que funcione, entre parentesis incluimos las variables num1,num2
-        print(f"{num1} {simbolo_elegir} {num2} {respuesta}")
+    while should_accumulate:
+        for symbol in operations: # this comes from the dictionary
+            print(symbol)
+        symbol_chosen = input("Choose an operation: ")
+        num2 = float(input("What is the next number?: "))
+        answer = operations[symbol_chosen](num1, num2) # operations comes from the dictionary. Symbol to choose comes from our input and to make it work we include the variables num1,num2 in parentheses
+        print(f"{num1} {symbol_chosen} {num2} {answer}")
 
-        #8 - una vez teniendo el resultado normalmente hecho debemos de crear una condicional para saber si quieres seguir sacando cuentas o quieres dejarlo hasta alli
+        #8 - once you have the result, we should make a conditional to know if you want to continue calculating or if you want to stop there
 
-        opcion = input(f"Escribe 'si' para continuar calculando con {respuesta}, o escribe 'no' para empezar un nuevo calculo.").lower()
+        option = input(f"Type 'yes' to continue calculating with {answer}, or type 'no' to start a new calculation.").lower()
 
-        if opcion == "si":
-            num1 = respuesta
+        if option == "yes":
+            num1 = answer
         else:
-            deberias_acumular = False
+            should_accumulate = False
             print("\n" * 20)
-            calculo()#llamamos a la funcion otra vez para ejecutar la calculadora otra vez
+            calculate()# we call the function again to run the calculator again
 
-calculo() #llamamos a la funcion creada en lugar de crear otro while y para que sea mas practico de repetir el codigo
+calculate() # we call the created function instead of creating another while loop and so it is more practical to repeat the code
