@@ -1,82 +1,82 @@
-#scope y el proyecto llamado: Adivinar el numero
+# scope and the project called: Guess the number
 
 enemies = 1
 
-def incrementar():
+def increment():
     enemies = 2
-    #print(f"los enemigos adentro son: {enemies}")
+    #print(f"the enemies inside are: {enemies}")
 
-#incrementar()
-#print(f"Los enemigos afuera de la funcion: {enemies}")
+#increment()
+#print(f"The enemies outside the function: {enemies}")
 
-#local scope: existe dentro de la función.
+# local scope: it exists inside the function.
 
 def drink_potion():
-    pocion_fuerza = 2 #pocion_fuerza está definido dentro de drink_potion.
-    # Esa variable solo “vive” dentro de esa función; fuera de ella no la deberías usar (saldría NameError si intentas acceder). 
-    print(pocion_fuerza)
+    strenght_potion = 2 # strenght_potion is defined inside drink_potion.
+    # That variable only “lives” inside that function; outside it you should not use it (NameError if you try to access it).
+    print(strenght_potion)
 
 #drink_potion()
 
-#global scope: existe a nivel del archivo (fuera de funciones).
+# global scope: it exists at the file level (outside functions).
 
-salud_jugador = 10 #salud_jugador = 10 está en el “scope global”
-# así que se puede usar desde cualquier parte del archivo (incluidas funciones), siempre que no haya una variable local con el mismo nombre que la “tape”
+player_health = 10 # player_health = 10 is in the “global scope”
+# so it can be used from anywhere in the file (including functions), as long as there is no local variable with the same name that shadows it.
 
 def game():
     def drink_potion():
-        pocion_fuerza = 2
-        print(salud_jugador)
+        strenght_potion = 2
+        print(player_health) # we can use player_health inside the function because it is in the global scope, but we cannot use strenght_potion outside the function because it is in the local scope
 
     drink_potion()
-#game() #en este caso metimos a drink_potion dentro de otra funcion asi que, debemos de llamar a game() para ejecutarlo
+#game() # in this case we put drink_potion inside another function, so we must call game() to execute it
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-#No hay Block Scope en Python
+# There is no block scope in Python
 
-nivel = 3
-enemies = ['aliens', 'zombies','vampiros']
+level = 3
+enemies = ['aliens', 'zombies', 'vampires']
 
 def crear_enemigo():
-    nuevo_enemigo = ""
-    if nivel < 5:
-        nuevo_enemigo+= enemies[0]
-    return print(f"el enemigo es: {nuevo_enemigo}")
+    new_enemy = ""
+    if level < 5:
+        new_enemy += enemies[0]
+    return print(f"the enemy is: {new_enemy}")
 #crear_enemigo()
 
 #===================================================================================================================================================================#
 
-#escribir una funcion que diga si un numero es primo o no:
+# write a function that says whether a number is prime or not:
 
-def is_prime(num): # crea una función que recibe un número num y decide si es primo.
-    #Caso rápido: números menores que 2
-    if num < 2: #si el numero es menor a 2 no cuenta como primo
+def is_prime(num): # creates a function that receives a number num and decides if it is prime.
+    # quick case: numbers less than 2
+    if num < 2: # if the number is less than 2 it does not count as prime
         return False
-    for i in range(2, num): #Buscas divisores: Genera valores i = 2, 3, 4, ... hasta llegar al numero colocado
-        #empezamos en 2 ya que 1 no cuenta, y avanza 2,3,4,5,6,7... hasta llegar al numero que asignamos
-        if num % i == 0: #si el numero que se divide da 0 o parecido entonces:
-            return False  # Si encuentras un divisor, NO es primo
-    return True #  # Si encuentras un divisor, NO es primo
+    for i in range(2, num): # search for divisors: generates values i = 2, 3, 4, ... until reaching the given number
+        # we start at 2 because 1 does not count, and advance 2,3,4,5,6,7... until reaching the assigned number
+        if num % i == 0: # if the number divides evenly then:
+            return False  # If you find a divisor, it is NOT prime
+    return True #  # If you find a divisor, it is NOT prime
 
-#print(is_prime(2)) #ponemos el numero 2 como ejemplo ya que es primo y funciona
+#print(is_prime(2)) # we use number 2 as an example because it is prime and it works
 
 #====================================================================================================================================================================#
-#Me quede en How to modify a global variable - video 89 (cambiar contrasena del banco isis :u)
-# Modificando el Global Scope
-enemigos = 1
+# I paused at How to modify a global variable - video 89 (change bank password isis :u)
+# Modifying the Global Scope
+enemies = 1
 
-def incrementar_enemigos(enemy):
-    print(f"los enemigos adentro de la funcion: {enemigos}")
+def increment_enemies(enemy):
+    print(f"the enemies inside the function: {enemies}")
     return enemy + 1
 
-enemigos = incrementar_enemigos(enemigos)
-#print(f"enemigos afuera de la funcion: {enemigos}")
+enemies = increment_enemies(enemies)
+#print(f"enemies outside the function: {enemies}")
 
 #=====================================================================================================================================================================#
 
-#global constants 
-# se trata de que las URLs como: GOOGLE, FACEBOOK, INSTAGRAM y formulas matematicas como PI van casi siempre en mayusculas y las podemos llamar 
-# despues si estan antes de la funcion que queramos crear
+# global constants
+# this means that URLs like: GOOGLE, FACEBOOK, INSTAGRAM and mathematical formulas like PI are almost always uppercase and we can refer to them
+# later if they are defined before the function we want to create
 
 
