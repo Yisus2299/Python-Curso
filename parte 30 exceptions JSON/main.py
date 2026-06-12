@@ -15,7 +15,7 @@ def fonetica():
     try:
         output_list = [phonetic_dict[letter] for letter in word]
     except KeyError:
-        print("Perdona, solo letras en el alfabeto")
+        print("Sorry but only alphabet letters are allowed.")
         fonetica()
     else:
         print(output_list)

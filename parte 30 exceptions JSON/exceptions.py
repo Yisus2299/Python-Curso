@@ -1,11 +1,11 @@
 '''
-try: algo que puede causar una exception
+try: something that might cause an exception
 
-except: haz esto si habia una exception
+except: do this if there was an exception
 
-else: haz esto si no hay exceptiones
+else: do this if there are no exceptions
 
-finally: haz esto sin importar que suceda
+finally: do this regardless of what happens
 '''
 
 # hagamos nuestras propias excepciones
@@ -25,13 +25,13 @@ finally: haz esto sin importar que suceda
 
 #=====================================================================================================#
 
-altura = float(input("altura: "))
-peso = int(input("Peso: "))
+height = float(input("Height: "))
+weight = int(input("Weight: "))
 
-if altura >= 3:
-    raise ValueError("Los humanos no deberian de medir 3 metros") # Raise hace que te aparezca un mensaje con lo que pongamos en parentesis
+if height >= 3:
+    raise ValueError("Humans should not be taller than 3 meters") # Raise makes the error message appear
 
-# bmi = peso / altura ** 2
+# bmi = weight / height ** 2
 # print(bmi)
 
 
