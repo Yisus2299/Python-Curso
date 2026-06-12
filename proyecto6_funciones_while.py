@@ -1,27 +1,27 @@
-# proyecto inventado "escapa del laberinto"
-#no hay escape pero realmente esto ejemplifica que sin un while, se acabaria apenas dice "hay una pared ahi" y similar
-posicion = 0
-salida = 6
+# invented project "escape the maze"
+# there is no escape but this really illustrates that without a while loop, it would end as soon as it says "there is a wall there" and similar
+position = 0
+exit = 6
 
-while posicion != salida:
-    print("Estás en:", posicion)
-    movimiento = input("Escribe izquierda o derecha: ").lower()
-    if movimiento == "izquierda":
-        nueva = posicion - 1
-        if nueva < 0:
-            print("No puedes salir del laberinto.")
-        elif nueva == 2 or nueva == 5:
-            print("Hay una pared ahí.")
+while position != exit:
+    print("You are at:", position)
+    move = input("Type left or right: ").lower()
+    if move == "left":
+        new = position - 1
+        if new < 0:
+            print("You cannot leave the maze.")
+        elif new == 2 or new == 5:
+            print("There is a wall there.")
         else:
-            posicion = nueva
-    elif movimiento == "derecha":
-        nueva = posicion + 1
-        if nueva > 6:
-            print("No puedes salir del laberinto.")
-        elif nueva == 2 or nueva == 5:
-            print("Hay una pared ahí.")
+            position = new
+    elif move == "right":
+        new = position + 1
+        if new > 6:
+            print("You cannot leave the maze.")
+        elif new == 2 or new == 5:
+            print("There is a wall there.")
         else:
-            posicion = nueva
+            position = new
     else:
-        print("Escribe solo 'izquierda' o 'derecha'.")
-print("¡Felicidades, escapaste!")
+        print("Type only 'left' or 'right'.")
+print("Congratulations, you escaped!")

@@ -1,48 +1,48 @@
 import random
 
-lista = ["isis", "ryo", "selene", "nana"]
+list = ["isis", "ryo", "selene", "nana"]
 
-palabra_elegida = random.choice(lista)
+choosen_word = random.choice(list)
 
-vidas = 6
+lives = 6
 letras_correctas = []
 
-print("Bienvenido al juego del ahorcado.")
+print("Welcome to the hangman game.")
 
 placeholder = ""
-for _ in range(len(palabra_elegida)):
+for _ in range(len(choosen_word)):
     placeholder += "_"
-print("Palabra:", placeholder)
+print("Word:", placeholder)
 
 game_over = False
 
 while not game_over:
-    print(f"Te quedan {vidas} vidas.")
+    print(f"You have {lives} lives left.")
 
-    adivinar = input("Adivina una letra: ").lower()
+    adivinar = input("Guess a letter: ").lower()
 
     if adivinar in letras_correctas:
-        print("Ya adivinaste esa letra. Intenta otra.")
+        print("You already guessed that letter. Try another one.")
     else:
-        if adivinar in palabra_elegida:
+        if adivinar in choosen_word:
             letras_correctas.append(adivinar)
         else:
-            vidas -= 1
-            print("No está esa letra.")
+            lives -= 1
+            print("That letter is not in the word.")
 
     display = ""
-    for letra in palabra_elegida:
-        if letra in letras_correctas:
-            display += letra
+    for letter in choosen_word:
+        if letter in letras_correctas:
+            display += letter
         else:
             display += "_"
 
-    print("Palabra:", display)
+    print("Word:", display)
 
-    if vidas == 0:
+    if lives == 0:
         game_over = True
-        print(f"Has perdido. La palabra era: {palabra_elegida}")
+        print(f"You lost. The word was: {choosen_word}")
 
     if "_" not in display:
         game_over = True
-        print("Tú ganas.")
+        print("You win.")
