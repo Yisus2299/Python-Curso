@@ -31,32 +31,32 @@ TZ = get_env_value("TZ") or "America/Santiago"
 if not EMAIL_SENDER or not PASSWORD:
     raise ValueError("EMAIL_SENDER or GMAIL_PASSWORD missing in .env file")
 
-print(f"Usando .env en: {ENV_FILE}")
+print(f"Using .env file: {ENV_FILE}")
 print(f"CSV_FILE resolved to: {CSV_FILE}")
 print(f"EMAIL_SENDER: {EMAIL_SENDER}")
 print(f"GMAIL_PASSWORD length: {len(PASSWORD)}")
 
 try:
-    hoy = datetime.now(ZoneInfo(TZ))
+    today = datetime.now(ZoneInfo(TZ))
 except Exception as e:
     raise ValueError(f"Invalid timezone in TZ: {TZ}") from e
 
-mes_hoy, dia_hoy = hoy.month, hoy.day
+month_today, day_today = today.month, today.day
 
 
-def email_valido(email: str) -> bool:
-    """Validación simple de email."""
+def email_valid(email: str) -> bool:
+    """Validate email"""
     return "@" in email and "." in email.split("@")[-1]
 
 
-cumples_hoy = []
+birthdays_today = []
 
 try:
     with open(CSV_FILE, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
 
-        columnas_requeridas = {"nombre", "email", "mes", "dia"}
-        if not reader.fieldnames or not columnas_requeridas.issubset(set(reader.fieldnames)):
+        required_columns = {"nombre", "email", "mes", "dia"}
+        if not reader.fieldnames or not required_columns.issubset(set(reader.fieldnames)):
             raise ValueError("The CSV must have columns: name,email,month,day")
 
         for row in reader:
@@ -66,28 +66,28 @@ try:
                 mes = int(row["mes"])
                 dia = int(row["dia"])
             except (KeyError, ValueError, AttributeError):
-                print("Malformed row, it is omitted.")
+                print("Malformed row, it is skipped.")
                 continue
 
             if not nombre:
-                print("Empty name, the row is omitted.")
+                print("Empty name, the row is skipped.")
                 continue
 
-            if not email_valido(email):
-                print(f"Invalid email ({email}), the row is omitted.")
+            if not email_valid(email):
+                print(f"Invalid email ({email}), the row is skipped.")
                 continue
 
             if not (1 <= mes <= 12) or not (1 <= dia <= 31):
-                print(f"Invalid date ({mes}/{dia}) for {nombre}, the row is omitted.")
+                print(f"Invalid date ({mes}/{dia}) for {nombre}, the row is skipped.")
                 continue
 
-            if mes == mes_hoy and dia == dia_hoy:
-                cumples_hoy.append((nombre, email))
+            if mes == month_today and dia == day_today:
+                birthdays_today.append((nombre, email))
 
 except FileNotFoundError:
     raise FileNotFoundError(f"File not found {CSV_FILE}")
 
-if not cumples_hoy:
+if not birthdays_today:
     print("Today there are no birthdays.")
     raise SystemExit
 
@@ -97,7 +97,7 @@ try:
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
         smtp.login(EMAIL_SENDER, PASSWORD)
 
-        for nombre, email in cumples_hoy:
+        for nombre, email in birthdays_today:
             msg = EmailMessage()
             msg["From"] = EMAIL_SENDER
             msg["To"] = email
@@ -114,7 +114,7 @@ try:
 
 except smtplib.SMTPAuthenticationError:
     raise ValueError(
-        "SMTP authentication error. Check EMAIL_SENDER and GMAIL_PASSWORD (App Password)."
+        "SMTP authentication error. Check EMAIL_SENDER and GMAIL_PASSWORD (application password)."
     )
 except smtplib.SMTPException as e:
     raise RuntimeError(f"Error sending emails: {e}") from e

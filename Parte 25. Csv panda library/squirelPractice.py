@@ -17,4 +17,4 @@ data_dict = {
 }
 
 df = pd.DataFrame(data_dict)
-df.to_csv("Conteo_de_ardillas.csv")
+df.to_csv("squirel_count.csv")
