@@ -1,26 +1,26 @@
-#como usar POO en python
+# how to use OOP in Python
 
-#creamos una clase especificando todo lo que puede hacer dicha cosa (ejemplo un auto, el color, las puertas, las ventanas, los kilometros, etc)
-#luego creamos un objeto, que es basicamente una version diferente de la clase (es un auto azul, con las mismas puertas, ventanas, kilometros, etc)
+# we create a class specifying everything that thing can do (for example a car, the color, the doors, the windows, the kilometers, etc)
+# then we create an object, which is basically a different version of the class (it is a blue car, with the same doors, windows, kilometers, etc)
 
-#objeto =  #class
+# object =  # class
 '''car = carBlueprint()'''
 
 #===================================================================================================================================================#
 
 # from turtle import Screen, Turtle
-# import turtle #hacemos esto en lugar de colocar: turtle.Turtle()
+# import turtle # we do this instead of writing: turtle.Turtle()
 
 # timmy = Turtle()
 
 #====================================================================================================================================================#
-#object attributes
+# object attributes
 
-#un auto tiene atributos como: 
+# a car has attributes like:
 # speed = 0
 # fuel = 32
 
-#la sintaxis seria: objeto-> car.speed <-attribute
+# the syntax would be: object -> car.speed <- attribute
 
 # from turtle import Screen, Turtle
 
@@ -30,9 +30,9 @@
 
 
 #====================================================================================================================================================#
-#object methods
+# object methods
 
-#los metodos se reieren a las funciones que puede cumplir ese objeto
+# methods refer to the functions that the object can perform
 
 ''''from turtle import Screen, Turtle, forward, left, circle
 
@@ -46,16 +46,16 @@ print(my_screen.canvheight)
 my_screen.exitonclick()'''
 
 #====================================================================================================================================================#
-#python packages - piyi
+# python packages - pypi
 
 from prettytable import PrettyTable
-#podemos cambiar la apariencia de nuestra tabla con atributos
+# we can change the appearance of our table with attributes
 
-tabla = PrettyTable()
+table = PrettyTable()
 
-tabla.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
-tabla.add_column("Type", ["Electric", "Water", "Fire"])
-tabla.align = "l" #ponemos la informacion de la tabla a la izquierda
-print(tabla)
+table.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
+table.add_column("Type", ["Electric", "Water", "Fire"])
+table.align = "l" # align the table information to the left
+print(table)
 
 
