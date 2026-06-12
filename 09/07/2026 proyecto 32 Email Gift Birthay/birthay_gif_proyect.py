@@ -97,20 +97,20 @@ try:
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
         smtp.login(EMAIL_SENDER, PASSWORD)
 
-        for nombre, email in birthdays_today:
+        for name, email in birthdays_today:
             msg = EmailMessage()
             msg["From"] = EMAIL_SENDER
             msg["To"] = email
-            msg["Subject"] = f"For {nombre} on their unique and special day 🎉🌙💛🌻🌸"
+            msg["Subject"] = f"For {name} on their unique and special day 🎉🌙💛🌻🌸"
             msg.set_content(
-                f"Hello {nombre},\n\n"
-                f"Happy birthday, {nombre}! 🎉🎂\n\n"
+                f"Hello {name},\n\n"
+                f"Happy birthday, {name}! 🎉🎂\n\n"
                 f"Have a wonderful day and that all your wishes come true.\n\n"
                 f"With love, Jesus\n"
             )
 
             smtp.send_message(msg)
-            print(f"Sent to {nombre} <{email}>")
+            print(f"Sent to {name} <{email}>")
 
 except smtplib.SMTPAuthenticationError:
     raise ValueError(
