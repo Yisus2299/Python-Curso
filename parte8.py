@@ -1,45 +1,45 @@
-# funciones con inputs / argumentos y parametros
+# functions with inputs / arguments and parameters
 
 '''def greet():
 
-    print("Hey isis")
-    print("te quiero con todo mi corazon")
-    print("jamas cambies<33")'''
+    print("Hey Isis")
+    print("I love you with all my heart")
+    print("never change<33")'''
 
 # greet()
 
-#funciones que te permiten usar inputs
+# functions that allow you to use inputs
 
 '''def greet_with_name(name, name2, name3, name4):
-    print(F"hola {name} te quiero con todo mi corazon, siempre estare contigo<3")
-    print(F"hola {name2} eres mi mejor amigo aunque te molesto jsjs")
-    print(F"hola {name3} gracias por existir y me encanta lo espontanea que eres")
-    print(F"hola {name4} siempre seras la mejor pintora de todas<3")
+    print(F"hello {name}, I love you with all my heart, I will always be with you<3")
+    print(F"hello {name2}, you are my best friend even though I annoy you haha")
+    print(F"hello {name3}, thank you for existing and I love how spontaneous you are")
+    print(F"hello {name4}, you will always be the best painter of all<3")
 
-greet_with_name(name = "isis", name2= "Ryo", name3= "Nana", name4= "Selene")'''
+greet_with_name(name = "Isis", name2= "Ryo", name3= "Nana", name4= "Selene")'''
 
 #------------------------------------------------------------------------------------------------#
-#ejercicio de dias de la semana: 2 versiones de hacerlo:
+# week-lifetime exercise: 2 versions to do it:
 
 '''def life_in_weeks():
-    edad = int(input("¿Cuál es tu edad? "))
+    age = int(input("What is your age? "))
 
-    años_restantes = 90 - edad
-    semanas_restantes = años_restantes * 52
+    years_left = 90 - age
+    weeks_left = years_left * 52
 
-    print(f"Te quedan {semanas_restantes} semanas (aprox).")'''
+    print(f"You have {weeks_left} weeks left (approx).")'''
 
-# life_in_weeks() #segunda forma con sin inputs
+# life_in_weeks() # second form without inputs
 
-'''def life_in_weeks(edad):
-    años_restantes = 90 - edad
-    semanas_restantes = años_restantes * 52
-    print(f"Te quedan {semanas_restantes} semanas (aprox).")
+'''def life_in_weeks(age):
+    years_left = 90 - age
+    weeks_left = years_left * 52
+    print(f"You have {weeks_left} weeks left (approx).")
 
 life_in_weeks(22)'''
 
 #-------------------------------------------------------------------------------------------#
-#ejercicio 2 -- love calculator
+# exercise 2 -- love calculator
 
 '''def calculate_love_score(name1, name2):
     combined_names = name1 + name2
