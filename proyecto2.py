@@ -1,11 +1,11 @@
-print("bienvenido al calculador de propinas")
-total = float(input("cual es el total de la cuenta? "))
-propina = float(input("cual es la propina? 10, 12 o 15? "))
-personas = int(input("cuantas personas son? "))
+print("welcome to the tip calculator")
+total = float(input("what is the total bill? "))
+tip = float(input("what is the tip? 10, 12, or 15? "))
+people = int(input("how many people are there? "))
 
-propina_total = total * (propina / 100)
-total_con_propina = total + propina_total
-total_por_persona = total_con_propina / personas
+tip_total = total * (tip / 100)
+total_with_tip = total + tip_total
+total_per_person = total_with_tip / people
 
-print(f"el total de la cuenta es {total_con_propina}")
-print(f"el total por persona es {total_por_persona}")
+print(f"the total bill is {total_with_tip}")
+print(f"the total per person is {total_per_person}")

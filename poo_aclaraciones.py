@@ -1,16 +1,16 @@
-class Celular: #las clases son como un molde para crear objetos
-    def __init__(self, marca, modelo, camara): #el constructor es la funcion que se ejecuta cuando se crea un objeto
-        self.marca = marca #self es el objeto que se esta creando y marca, modelo y camara son los atributos del objeto
-        self.modelo = modelo #self.marca es el atributo del objeto
-        self.camara = camara #self.modelo es el atributo del objeto
+class Celular: # classes are like a mold for creating objects
+    def __init__(self, marca, modelo, camara): # the constructor is the function that runs when an object is created
+        self.marca = marca # self is the object being created and marca, modelo, and camara are the object's attributes
+        self.modelo = modelo # self.marca is the object's attribute
+        self.camara = camara # self.modelo is the object's attribute
         
     def llamar(self):
-        print(f"estas llamando desde un {self.modelo}")
+        print(f"you are calling from a {self.modelo}")
 
     
 
-celular1 = Celular("Samsung", "S23", "48mp") #celular1 es el objeto que se esta creando
-celular2 = Celular("Apple", "Iphone 15 pro", "58mp") #celular2 es el objeto que se esta creando
+celular1 = Celular("Samsung", "S23", "48mp") # celular1 is the object being created
+celular2 = Celular("Apple", "Iphone 15 pro", "58mp") # celular2 is the object being created
 
 celular1.llamar()
 
