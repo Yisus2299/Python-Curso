@@ -1,52 +1,52 @@
-alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-def encrypt(texto_original, shift_cambio):
+def encrypt(original_text, shift_letter):
     cipher_text = ""
 
-    for letra in texto_original:
-       shifted_position = alfabeto.index(letra) + shift_cambio # 7 -> 9
+    for letter in original_text:
+       shifted_position = alphabet.index(letter) + shift_letter # 7 -> 9
 
 
-       shifted_position %= len(alfabeto) #0-25
-       cipher_text += alfabeto[shifted_position] # j
+       shifted_position %= len(alphabet) #0-25
+       cipher_text += alphabet[shifted_position] # j
 
-    print(f"Aquí está el resultado encodeado: {cipher_text}")
+    print(f"Here is the encoded result: {cipher_text}")
 
-#parte 2 creamos la funcion de caesar
+# part 2 we create the caesar function
 
 
-def caesar(texto_original, shift_cambio, encode_or_decode):
+def caesar(original_text, shift_letter, encode_or_decode):
     output_text = ""
     if encode_or_decode == "decode":
-        shift_cambio *= -1
+        shift_letter *= -1
 
-    for letra in texto_original:
+    for letter in original_text:
 
-            if letra not in alfabeto:
-                output_text += letra
+            if letter not in alphabet:
+                output_text += letter
             else:
 
-                shifted_position = alfabeto.index(letra) + shift_cambio 
-                shifted_position %= len(alfabeto) 
-                output_text += alfabeto[shifted_position]  
-    print(f"Aquí está el {encode_or_decode}d result: {output_text}")
+                shifted_position = alphabet.index(letter) + shift_letter 
+                shifted_position %= len(alphabet) 
+                output_text += alphabet[shifted_position]  
+    print(f"Here is the {encode_or_decode}d result: {output_text}")
 
 
-deberias_continuar = True
+should_continue = True
 
-while deberias_continuar:
+while should_continue:
 
-    direccion = input("Escribe 'encode' para encriptar, escribe 'decode' para desencriptar:\n").lower()
-    texto = input("Escribe tu mensaje:\n").lower()
-    cambio = int(input("Escribe el cambio del número:\n"))
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
 
-    restart= input("Escribe 'Si' quieres hacerlo otra vez. De otra forma, escribe 'No',\n ").lower()
+    restart= input("Type 'Yes' if you want to do it again. Otherwise, type 'No',\n ").lower()
     if restart == "no":
-        deberias_continuar = False
-        print("Adios.")
+        should_continue = False
+        print("Goodbye.")
     
-    caesar(texto_original = texto, shift_cambio = cambio, encode_or_decode = direccion)
+    caesar(original_text = text, shift_letter = shift, encode_or_decode = direction)
 
 
 
