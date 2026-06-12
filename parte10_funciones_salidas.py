@@ -1,4 +1,4 @@
-#Funciones con salidas : return/continue/break
+# Functions with outputs: return/continue/break
 
 # def format_name(f_name, l_name, M_name ):
 #     print(f_name.title())
@@ -12,8 +12,8 @@ def format_name(f_name, l_name ):
     formated_l_name = l_name.title()
     return f"{formated_f_name} {formated_l_name}"
     
-#formated_string = format_name("AnGeLa","YU") - esta es una manera de hacerlo
-#print(format_name("AnGeLa","YU")) #esta es otra manera de hacerlo
+#formated_string = format_name("AnGeLa","YU") - this is one way to do it
+#print(format_name("AnGeLa","YU")) #this is another way to do it
 #------------------------------------------------------------------------------#
 def function_1(text):
     return text + text
@@ -27,26 +27,26 @@ output = function_2(function_1("Hello"))
 
 def format_name(f_name, l_name):
     if f_name == "" or l_name =="":
-        return "No pusiste nada"
+        return "You didn't enter anything"
     else:
         formatted_f_name = f_name.title()
         formatted_l_name = l_name.title()
-        return f"Resultado: {formatted_f_name} {formatted_l_name}"
+        return f"Result: {formatted_f_name} {formatted_l_name}"
 
-# print(format_name(input("Cual es tu primer nombre?: "), input("Cual es tu apellido?: ")))
+# print(format_name(input("What is your first name?: "), input("What is your last name?: ")))
 
 #--------------------------------------------------------------------------------------------------------#
 
 #----------------------------------------Docstrings:
 
 def format_name(f_name, l_name):
-    '''Toma el primer nombre y el apellido para formar un Return el Title case de la version del nombre'''
+    '''Takes the first name and last name to return the Title case version of the name.'''
     if f_name == "" or l_name =="":
-        return "No pusiste nada"
+        return "You didn't enter anything"
     else:
         formatted_f_name = f_name.title()
         formatted_l_name = l_name.title()
-        return f"Resultado: {formatted_f_name} {formatted_l_name}"
+        return f"Result: {formatted_f_name} {formatted_l_name}"
 
 formated_name = format_name("AnGeLa","yU")
 
