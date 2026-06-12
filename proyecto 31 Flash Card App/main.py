@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).parent
 WORDS_TO_LEARN_PATH = BASE_DIR / "data" / "words_to_learn.csv"
 ORIGINAL_WORDS_PATH = BASE_DIR / "data" / "french_words.csv"
 
-# Cargar progreso
+# Load progress
 try:
     data = pandas.read_csv(WORDS_TO_LEARN_PATH)
 except FileNotFoundError:
@@ -17,7 +17,7 @@ except FileNotFoundError:
 except pandas.errors.EmptyDataError:
     data = pandas.read_csv(ORIGINAL_WORDS_PATH)
 else:
-    # Validar que tenga las columnas esperadas; si no, usar original
+    # Validate expected columns; if missing, fall back to original file
     expected_columns = {"French", "English"}
     if not expected_columns.issubset(set(data.columns)):
         data = pandas.read_csv(ORIGINAL_WORDS_PATH)
@@ -31,37 +31,37 @@ flip_timer = None
 def next_card():
     global current_card, flip_timer
 
-    # Cancelar timer anterior para evitar flips acumulados
+    # Cancel previous timer to avoid stacked flips
     if flip_timer is not None:
         window.after_cancel(flip_timer)
 
-    # Si no hay más palabras, mostrar mensaje final
+    # If no more words, show completion message
     if not to_learn:
         canvas.itemconfig(card_background, image=card_front_img)
-        canvas.itemconfig(card_title, text="Completado", fill="black")
-        canvas.itemconfig(card_word, text="¡Ya aprendiste todas!", fill="black")
+        canvas.itemconfig(card_title, text="Completed", fill="black")
+        canvas.itemconfig(card_word, text="You've learned all the words!", fill="black")
         return
 
     current_card = random.choice(to_learn)
 
-    # Mostrar frente de la tarjeta (francés)
+    # Show front of the card (French)
     canvas.itemconfig(card_background, image=card_front_img)
     canvas.itemconfig(card_title, text="French", fill="black")
     canvas.itemconfig(card_word, text=current_card["French"], fill="black")
 
-    # Programar volteo
+    # Schedule flip
     flip_timer = window.after(2000, flip_card)
 
 
 def flip_card():
-    # Mostrar reverso (inglés)
+    # Show back of the card (English)
     canvas.itemconfig(card_background, image=card_back_img)
     canvas.itemconfig(card_title, text="English", fill="white")
     canvas.itemconfig(card_word, text=current_card["English"], fill="white")
 
 
 def is_known():
-    # Si la conoces, se elimina de la lista, se guarda progreso y pasa a la siguiente
+    # If known, remove from list, save progress and go to next
     if current_card in to_learn:
         to_learn.remove(current_card)
         pandas.DataFrame(to_learn).to_csv(WORDS_TO_LEARN_PATH, index=False)

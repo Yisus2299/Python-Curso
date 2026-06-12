@@ -2,7 +2,7 @@ from tkinter import *
 from pathlib import Path
 import math
 
-#==================== CONSTANTES ==============================================================================================================================#
+#==================== CONSTANTS ==============================================================================================================================#
 
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -12,14 +12,15 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
-TOMATO = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent
 
-#==================== TIMES RESET ==============================================================================================================================#
+#==================== TIMER STATE =============================================================================================================================#
 
 timer_after_id = None
 reps = 0
 
-#==================== TIMER MECHANISM ==========================================================================================================================#
+
+#==================== TIMER MECHANISM =========================================================================================================================#
 
 
 def start_timer():
@@ -34,13 +35,13 @@ def start_timer():
     long_break_sec = LONG_BREAK_MIN * 60
 
     if reps % 8 == 0:
-        cuenta_atras(long_break_sec)
+        countdown(long_break_sec)
         title_label.config(text="Break", fg=RED)
     elif reps % 2 == 0:
-        cuenta_atras(short_break_sec)
+        countdown(short_break_sec)
         title_label.config(text="Break", fg=PINK)
     else:
-        cuenta_atras(work_sec)
+        countdown(work_sec)
         title_label.config(text="Work", fg=GREEN)
 
 
@@ -55,26 +56,26 @@ def reset_timer():
     title_label.config(text="Timer", fg=GREEN)
 
 
-#==================== COUNTDOWN MECHANISM ======================================================================================================================#
+#==================== COUNTDOWN MECHANISM =====================================================================================================================#
 
 
-def cuenta_atras(count):
+def countdown(count):
     global timer_after_id
     count_min = math.floor(count / 60)
     count_sec = count % 60
     canvas.itemconfig(timer_text, text=f"{count_min:02d}:{count_sec:02d}")
     if count > 0:
-        timer_after_id = window.after(1000, cuenta_atras, count - 1)
+        timer_after_id = window.after(1000, countdown, count - 1)
     else:
         timer_after_id = None
-        # reps impar = acaba de terminar un bloque de trabajo
+        # If reps is odd, a work block just finished
         if reps % 2 == 1:
             n = (reps + 1) // 2
             check_marks.config(text="✔" * n)
         start_timer()
 
 
-#==================== UI SETUP =================================================================================================================================#
+#==================== UI SETUP ================================================================================================================================#
 
 window = Tk()
 window.title("Pomodoro")
@@ -84,7 +85,7 @@ title_label = Label(window, text="Timer", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 
 title_label.grid(column=1, row=0)
 
 canvas = Canvas(window, width=300, height=324, highlightthickness=0, bg=YELLOW)
-tomato_img = PhotoImage(file=str(TOMATO / "tomato.png"))
+tomato_img = PhotoImage(file=str(BASE_DIR / "tomato.png"))
 canvas.create_image(150, 162, image=tomato_img)
 timer_text = canvas.create_text(150, 162, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)

@@ -1,7 +1,7 @@
-# Hoy crearemos un codigo Morse y, principalmente debido a que se trata de un codigo Morse necesitamos los caracteres principales. 
-# todas las reglas y en que se basa me guie de este link: https://en.wikipedia.org/wiki/Morse_code
+# This script implements a Morse code converter. The MORSE_CODE mapping
+# follows the standard defined on Wikipedia: https://en.wikipedia.org/wiki/Morse_code
 
-# 1- primero creamos una variable global que podamos usar en todas las funciones y en cualquier ocasion.
+# 1- define a global mapping so it can be used by all functions.
 
 MORSE_CODE = {
     "A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".",
@@ -20,9 +20,13 @@ MORSE_CODE = {
     "$": "...-..-", "@": ".--.-.",
 }
 
-# 2- creamos la funcion que convierte un caracter a morse
-
+# 2- function that converts text to Morse code.
 def text_to_morse(text: str) -> str:
+    """Convert a text string to Morse code.
+
+    Words are separated by a slash (/) and letters by spaces.
+    Unknown characters are ignored.
+    """
     words = []
     current_word = []
     for char in text:
@@ -38,13 +42,12 @@ def text_to_morse(text: str) -> str:
         words.append(" ".join(current_word))
     return " / ".join(words)
 
-# 3- creamos la funcion que convierte un texto completo a morse
 
 def main():
-    print("=== Conversor a código Morse ===")
-    user_text = input("Escribe el texto: ")
+    print("=== Morse Code Converter ===")
+    user_text = input("Enter text: ")
     if not user_text.strip():
-        print("No ingresaste texto.")
+        print("No text entered.")
         return
     print("\nMorse:")
     print(text_to_morse(user_text))
@@ -52,8 +55,6 @@ def main():
 # 4- creamos la interfaz por consola:
 
 if __name__ == "__main__":
-    texto = input("Escribe el texto a convertir: ")
-    resultado = text_to_morse(texto)
-    print(resultado)
+    main()
 
 # si ejecutamos y probamos colocando por ejemplo "Hello World" la respuesta esperada deberia de ser algo como: .... . .-.. .-.. --- / .-- --- .-. .-.. -.. 

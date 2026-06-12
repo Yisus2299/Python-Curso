@@ -22,11 +22,11 @@ guessed_states = []
 
 while len(guessed_states) < 50:
     answer_state = screen.textinput(
-        title=f"{len(guessed_states)}/50 estados correctos",
-        prompt="Cual es el nombre de otro estado?"
+        title=f"{len(guessed_states)}/50 correct",
+        prompt="What's the name of another state?"
     )
-# If answe_state es uno de los estados dentro de todos los 50_stados.csv
- #if ellos tienen razon, crea una turtle para escribir el nombre de los estados en las coordenasdas X y ponerlo
+    # If answer_state is one of the states in 50_states.csv,
+    # create a turtle to write the state name at its coordinates
 
     if answer_state is None:
         screen.bye()
@@ -47,22 +47,18 @@ while len(guessed_states) < 50:
         y = int(state_data.y.iloc[0])
         t.goto(x, y)
         t.write(state_data.state.iloc[0])
-                    
 
-# estados para aprender en un csv
 
+# States to learn CSV
 missing_states = [state for state in all_states if state not in guessed_states]
-#es decir:     estados para los estados en todos los estados si el estado no esta en los estados adivinados
+# i.e. states in all_states if the state is not in guessed_states
 missing_path = os.path.join(base_dir, "states_to_learn.csv")
 new_data = pd.DataFrame(missing_states, columns=["state"])
 new_data.to_csv(missing_path, index=False)
 
 
 
-
-
-
-
+screen.exitonclick()
 
 
 screen.exitonclick()
