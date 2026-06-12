@@ -1,57 +1,57 @@
-# Análisis de Muertes Policiales en EE.UU.
+# Police-Involved Deaths Analysis (U.S.)
 
-Este proyecto analiza datos de muertes por disparos policiales en Estados Unidos junto con datos socioeconómicos del censo.
+This project analyzes datasets of police-involved deaths in the United States together with state-level socioeconomic indicators from the census.
 
-## Archivos esperados
+## Expected files
 
-- `fatal-police-shootings-data.csv` o `police_killings.csv`: datos de muertes en enfrentamientos con policía.
-- `us_census_data.csv` o `census_by_state.csv`: datos del censo por estado, incluyendo tasa de pobreza, tasa de graduación de secundaria, ingreso medio del hogar y demografía racial.
+- `fatal-police-shootings-data.csv` or `police_killings.csv`: police-involved deaths dataset.
+- `us_census_data.csv` or `census_by_state.csv`: state-level census data including poverty rate, high school graduation rate, median household income, and racial demographics.
 
-## Uso
+## Usage
 
-1. Coloca los archivos CSV en la misma carpeta que `main.py`.
-2. Instala dependencias si no las tienes:
+1. Place the CSV files in the same folder as `main.py`.
+2. Install dependencies if you don't have them:
 
 ```bash
 pip install pandas matplotlib seaborn
 ```
 
-3. Ejecuta el script:
+3. Run the script:
 
 ```bash
 python main.py
 ```
 
-> Si `python` no se reconoce en PowerShell, usa el intérprete completo:
->
-> ```powershell
-> & "C:/Users/ImKen/AppData/Local/Python/pythoncore-3.14-64/python.exe" main.py
-> ```
->
-> O si prefieres un alias temporal dentro de esa sesión:
->
-> ```powershell
-> set-alias python "C:/Users/ImKen/AppData/Local/Python/pythoncore-3.14-64/python.exe"
-> python main.py
-> ```
+If `python` is not recognized in PowerShell, run with the full interpreter path, for example:
 
-4. Si los archivos tienen nombres distintos, usa:
-
-```bash
-python main.py --shootings ruta/del/archivo.csv --census ruta/del/censo.csv
+```powershell
+& "C:/Users/ImKen/AppData/Local/Python/pythoncore-3.14-64/python.exe" main.py
 ```
 
-5. Los gráficos generados se guardarán en la carpeta `analysis_output`.
+Or set a temporary alias in that session:
 
-## Qué hace el script
+```powershell
+set-alias python "C:/Users/ImKen/AppData/Local/Python/pythoncore-3.14-64/python.exe"
+python main.py
+```
 
-- Carga y normaliza los datos de muertes policiales y censo.
-- Calcula el número de muertes por estado.
-- Combina los datos con indicadores socioeconómicos.
-- Reporta correlaciones entre:
-  - tasa de pobreza
-  - tasa de graduación de secundaria
-  - ingreso medio del hogar
-  - muertes policiales por 100k
-- Analiza la distribución racial de las muertes.
-- Genera gráficos de relación entre muertes policiales y los indicadores principales.
+4. If your files have different names, specify them explicitly:
+
+```bash
+python main.py --shootings path/to/shootings.csv --census path/to/census.csv
+```
+
+5. Generated plots will be saved in the `analysis_output` directory.
+
+## What the script does
+
+- Loads and normalizes police-involved shootings and census datasets.
+- Computes deaths per state.
+- Merges the counts with socioeconomic indicators.
+- Reports correlations between:
+  - poverty rate
+  - high school graduation rate
+  - median household income
+  - police-involved deaths per 100k
+- Analyzes racial distribution of deaths.
+- Produces scatter plots showing relationships between deaths per 100k and the main indicators.

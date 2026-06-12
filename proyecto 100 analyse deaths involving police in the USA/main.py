@@ -164,11 +164,11 @@ def merge_datasets(shootings: pd.DataFrame, census: pd.DataFrame) -> pd.DataFram
 
 
 def print_top_states(merged: pd.DataFrame, n: int = 10) -> None:
-    print("\nTop states por número de muertes involucrando a policía:")
-    print(merged[["state", "deaths", "deaths_per_100k", "poverty_rate", "high_school_grad_rate", "median_household_income"]]
-          .sort_values(["deaths", "deaths_per_100k"], ascending=[False, False])
-          .head(n)
-          .to_string(index=False))
+        print("\nTop states by number of deaths involving police:")
+        print(merged[["state", "deaths", "deaths_per_100k", "poverty_rate", "high_school_grad_rate", "median_household_income"]]
+            .sort_values(["deaths", "deaths_per_100k"], ascending=[False, False])
+            .head(n)
+            .to_string(index=False))
 
 
 def correlation_report(merged: pd.DataFrame) -> None:
@@ -178,10 +178,9 @@ def correlation_report(merged: pd.DataFrame) -> None:
     ]
     subset = merged[indicators].dropna()
     if subset.empty:
-        print("\nNo hay suficientes datos para calcular correlaciones.")
+        print("\nNot enough data to compute correlations.")
         return
-
-    print("\nCorrelación entre variables socioeconómicas y muertes policiales:")
+    print("\nCorrelation between socioeconomic indicators and police-involved deaths:")
     corr = subset.corr(method="pearson")
     print(corr.to_string())
 
@@ -193,13 +192,13 @@ def correlation_report(merged: pd.DataFrame) -> None:
 
 def analyze_race(shootings: pd.DataFrame, census: pd.DataFrame) -> None:
     if "race" not in shootings.columns:
-        print("\nNo hay columna de raza en los datos de muertes policiales.")
+        print("\nNo 'race' column in police shootings data.")
         return
 
     race_counts = shootings["race"].value_counts(dropna=False).rename_axis("race").reset_index(name="deaths")
     race_counts["share_of_deaths"] = race_counts["deaths"] / race_counts["deaths"].sum() * 100
 
-    print("\nDistribución racial de las muertes policiales:")
+    print("\nRacial distribution of police-involved deaths:")
     print(race_counts.to_string(index=False))
 
     if {"white_pct", "black_pct", "hispanic_pct", "asian_pct"}.issubset(set(census.columns)):
@@ -209,11 +208,11 @@ def analyze_race(shootings: pd.DataFrame, census: pd.DataFrame) -> None:
             "HISPANIC": census["hispanic_pct"].mean(),
             "ASIAN": census["asian_pct"].mean(),
         }
-        print("\nComparación aproximada de participación poblacional (promedio nacional):")
+        print("\nApproximate population share comparison (national average):")
         for race_key, pop_share in race_shares.items():
             death_share = race_counts.loc[race_counts["race"] == race_key, "share_of_deaths"]
             if not death_share.empty:
-                print(f"  - {race_key}: share muertes = {death_share.iloc[0]:.1f}%, share población ≈ {pop_share:.1f}%")
+                print(f"  - {race_key}: death share = {death_share.iloc[0]:.1f}%, population share ≈ {pop_share:.1f}%")
 
 
 def plot_indicator_vs_deaths(merged: pd.DataFrame, x: str, label: str, output_path: Path) -> None:
@@ -223,36 +222,36 @@ def plot_indicator_vs_deaths(merged: pd.DataFrame, x: str, label: str, output_pa
     plt.figure(figsize=(10, 6))
     sns.scatterplot(data=merged, x=x, y="deaths_per_100k")
     sns.regplot(data=merged, x=x, y="deaths_per_100k", scatter=False, color="red")
-    plt.title(f"Muertes policiales por 100k vs {label}")
+    plt.title(f"Police-involved deaths per 100k vs {label}")
     plt.xlabel(label)
-    plt.ylabel("Muertes por 100k")
+    plt.ylabel("Deaths per 100k")
     plt.tight_layout()
     plt.savefig(output_path, dpi=150)
     plt.close()
-    print(f"Gráfico guardado en: {output_path}")
+    print(f"Plot saved to: {output_path}")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Analiza muertes policiales en EE.UU. junto con datos del censo por estado."
+        description="Analyze police-involved deaths in the U.S. together with state-level census indicators."
     )
     parser.add_argument(
         "--shootings",
         type=Path,
         default=None,
-        help="Ruta al archivo CSV de muertes policiales.",
+        help="Path to the police shootings CSV file.",
     )
     parser.add_argument(
         "--census",
         type=Path,
         default=None,
-        help="Ruta al archivo CSV de datos del censo por estado.",
+        help="Path to the state-level census CSV file.",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
         default=Path("analysis_output"),
-        help="Carpeta donde se guardarán los gráficos.",
+        help="Directory where plots will be saved.",
     )
     args = parser.parse_args()
 
@@ -261,19 +260,19 @@ def main() -> None:
     census_path = args.census or find_dataset_file(folder, CENSUS_CANDIDATES)
 
     if shootings_path is None:
-        print("No se encontró un archivo de muertes policiales. Busca uno de estos nombres:")
+        print("No police shootings dataset found. Look for one of these names:")
         for candidate in DATASET_CANDIDATES:
             print(f"  - {candidate}")
         return
 
     if census_path is None:
-        print("No se encontró un archivo de datos del censo. Busca uno de estos nombres:")
+        print("No census data file found. Look for one of these names:")
         for candidate in CENSUS_CANDIDATES:
             print(f"  - {candidate}")
         return
 
-    print(f"Cargando muertes policiales desde: {shootings_path}")
-    print(f"Cargando censo desde: {census_path}")
+    print(f"Loading police shootings data from: {shootings_path}")
+    print(f"Loading census data from: {census_path}")
 
     shootings = load_police_shootings(shootings_path)
     census = load_census(census_path)
@@ -284,11 +283,11 @@ def main() -> None:
     analyze_race(shootings, census)
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    plot_indicator_vs_deaths(merged, "poverty_rate", "Tasa de pobreza", args.output_dir / "deaths_vs_poverty.png")
-    plot_indicator_vs_deaths(merged, "high_school_grad_rate", "Tasa de graduación de secundaria", args.output_dir / "deaths_vs_high_school_grad.png")
-    plot_indicator_vs_deaths(merged, "median_household_income", "Ingreso medio del hogar", args.output_dir / "deaths_vs_income.png")
+    plot_indicator_vs_deaths(merged, "poverty_rate", "Poverty rate", args.output_dir / "deaths_vs_poverty.png")
+    plot_indicator_vs_deaths(merged, "high_school_grad_rate", "High school graduation rate", args.output_dir / "deaths_vs_high_school_grad.png")
+    plot_indicator_vs_deaths(merged, "median_household_income", "Median household income", args.output_dir / "deaths_vs_income.png")
 
-    print("\nAnálisis completado. Revisa los resultados en la consola y los gráficos generados.")
+    print("\nAnalysis complete. Check console output and generated plots.")
 
 
 if __name__ == "__main__":
