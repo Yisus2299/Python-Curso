@@ -1,4 +1,4 @@
-# reto 1: hacer que con la w te muevas hacia adelante, s atrras, a te gires y d dibujes
+# challenge 1: make it so w moves forward, s moves back, a turns and d draws
 from turtle import Turtle, Screen, color, shape, textinput
 import random
 import turtle
@@ -8,19 +8,19 @@ import turtle
 screen = Screen()
 
 
-def mover_adelante():
+def move_forward():
     tim.forward(10)
 
-def move_atras():
+def move_back():
     tim.backward(10)
 
-def girar_izquierda():
-    new_heading = tim.heading() + 10 #consultar el ángulo actual
-    tim.setheading(new_heading) # fijar el ángulo a un valor concreto.
+def turn_left():
+    new_heading = tim.heading() + 10 # get the current angle
+    tim.setheading(new_heading) # set the heading to a specific value.
 
-def girar_derecha():
-    new_heading = tim.heading() - 10 #consultar el ángulo actual
-    tim.setheading(new_heading)# fijar el ángulo a un valor concreto.
+def turn_right():
+    new_heading = tim.heading() - 10 # get the current angle
+    tim.setheading(new_heading)# set the heading to a specific value.
 
 def clear():
     tim.clear()
@@ -29,22 +29,22 @@ def clear():
     tim.pendown()
 
 
-screen.listen() #Hace que la ventana escuche eventos del teclado. Sin esto, las teclas suelen no responder.
-screen.onkey( fun=mover_adelante, key= "w" )
-screen.onkey( fun=move_atras, key = "s" )
-screen.onkey( fun=girar_izquierda, key = "a" )
-screen.onkey( fun=girar_derecha, key = "d" ) #asocia la tecla que ponemos como Key para que haga una accion, en este caso moverse hacia adelante
+screen.listen() # makes the window listen for keyboard events. Without this, keys usually don't respond.
+screen.onkey( fun=move_forward, key= "w" )
+screen.onkey( fun=move_back, key = "s" )
+screen.onkey( fun=turn_left, key = "a" )
+screen.onkey( fun=turn_right, key = "d" ) # associates the key we set with an action, in this case moving forward
 screen.onkey( fun=clear, key = "c" )
-#si ponemos fun=mover_adelante(), no se movera. Ya que, con parentesis la funcion ejecuta el programa de una vez y luego el Onkey, los parentesis tienen mas prioridad
+# if we use fun=move_forward(), it will not move. Because with parentheses the function runs immediately and then Onkey, parentheses have higher precedence
 screen.exitonclick()'''
 #============================================================================================================================================================================#
 
-# reto 2 - agregar mas tortugas. Podemos usar las clases o blueprints
+# challenge 2 - add more turtles. We can use classes or blueprints
 
 is_race_on = True
 screen = Screen()
-screen.setup(width=500,height=450) #configura el tamano del recuadro o la ventana que se abre
-user_bet = screen.textinput(title="Haz tu apuesta", prompt="Cual tortuga ganara la carrera? pon el color: ") #hace aparecer un mensaje con input por pantalla
+screen.setup(width=500,height=450) # configure the size of the window that opens
+user_bet = screen.textinput(title="Place your bet", prompt="Which turtle will win the race? enter the color: ") # shows a message with an input on screen
 colors = ['red','orange','green','blue','purple','black']
 y_positions = [-70, -40, -10, 20, 50, 80]
 all_turtles = []
@@ -66,9 +66,9 @@ while is_race_on:
             is_race_on = False
             winning_color = turtle.pencolor()
             if winning_color == user_bet:
-                print(f"El ganador fue la tortuga {winning_color}. ")
+                print(f"The winner was turtle {winning_color}.")
             else:
-                print(f"perdiste. Gano la tortuga {winning_color}. ")
+                print(f"You lost. Turtle {winning_color} won.")
         random_distance = random.randint(0,10)
         turtle.forward(random_distance)
 
