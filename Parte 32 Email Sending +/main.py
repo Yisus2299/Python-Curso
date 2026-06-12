@@ -14,10 +14,10 @@ email_reciver = "kae97dm@gmail.com"
 
 if not password:
     raise ValueError(
-        "Falta GMAIL_PASSWORD en .env. Crea una contraseña de aplicación en Google y pégala ahí."
+        "GMAIL_PASSWORD missing in .env. Create an application password in Google and paste it there."
     )
 
-subject = "Para mi noviecita hermosa Alekk<3"
+subject = "Test email"
 body = """
    Test about sending email
 """

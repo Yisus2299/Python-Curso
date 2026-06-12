@@ -17,7 +17,7 @@ password = os.getenv("GMAIL_PASSWORD")
 email_reciver = "kenzu603@gmail.com"
 
 if not password:
-    raise ValueError("Falta GMAIL_PASSWORD en el archivo .env")
+    raise ValueError("GMAIL_PASSWORD missing in .env file")
 
 
 tz = ZoneInfo("America/Caracas")
@@ -27,7 +27,7 @@ weekday = now.weekday()
 
 enviar_solo_miercoles = False
 if enviar_solo_miercoles and weekday != 2:
-    print("Hoy no es miércoles en Caracas. No se envía correo.")
+    print("Today is not Wednesday in Caracas. No email is sent.")
     raise SystemExit
 
 quotes_path = Path(__file__).with_name("quotes.txt")
@@ -35,12 +35,12 @@ with quotes_path.open(encoding="utf-8") as quote_file:
     all_quotes = [line.strip() for line in quote_file if line.strip()]
 
 if not all_quotes:
-    raise ValueError("quotes.txt está vacío o solo tiene líneas en blanco.")
+    raise ValueError("quotes.txt is empty or only has blank lines.")
 
 quote = random.choice(all_quotes)
-print(f'Frase elegida: "{quote}"')
+print(f'Selected quote: "{quote}"')
 
-subject = "Frase motivacional del día"
+subject = "Motivational quote of the day"
 body = quote
 
 em = EmailMessage()
@@ -56,7 +56,7 @@ with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
     smtp.login(email_sender, password)
     smtp.sendmail(email_sender, email_reciver, em.as_string())
 
-print("Correo enviado correctamente.")
+print("Email sent successfully.")
 
 
 

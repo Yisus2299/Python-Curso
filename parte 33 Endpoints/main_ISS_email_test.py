@@ -43,16 +43,16 @@ def is_night() -> bool:
 
 while True:
     try:
-        if True:  # <- temporal para enviarlo ya
+        if True:  # <- temporary to send it already
             context = ssl.create_default_context()
             with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=context, timeout=20) as connection:
                 connection.login(MY_EMAIL, MY_PASSWORD)
                 connection.sendmail(
                     from_addr=MY_EMAIL,
                     to_addrs="kenzu603@gmail.com",
-                    msg="Subject:Look up\n\nLook up, the ISS is not right there where you think",
+                    msg="Subject:Look up\n\nLook up, the ISS is not right there where you think it is",
                 )
-            break  # <- This is for sending it only once and it ends
+            break  # <- This is for sending it only once and it ends the loop
     except Exception as e:
         print("Error:", e)
         break
