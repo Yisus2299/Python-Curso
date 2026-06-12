@@ -1,19 +1,19 @@
-# Proyecto 99: Análisis de la Carrera Espacial
+# Project 99: Space Race Analysis
 
-Este proyecto contiene:
+This project contains:
 
-- `space_race_analysis.ipynb`: notebook con carga de datos, limpieza y visualizaciones.
-- `main.py`: script auxiliar para cargar y limpiar el dataset desde la carpeta del proyecto.
+- `space_race_analysis.ipynb`: a notebook for loading data, cleaning, and visualizations.
+- `main.py`: a helper script to locate, load and clean the dataset from the project folder.
 
-## Uso
+## Usage
 
-1. Coloca el archivo de datos del ejercicio en esta carpeta. Se buscan por defecto:
+1. Place the dataset file in this folder. By default the script will look for:
    - `space_missions.csv`
    - `space_race_launches.csv`
    - `launches.csv`
    - `space_data.csv`
 
-2. Abre `space_race_analysis.ipynb` en Jupyter o en VS Code.
-3. Ejecuta las celdas.
+2. Open `space_race_analysis.ipynb` in Jupyter or VS Code.
+3. Run the notebook cells.
 
-Si no tienes el CSV, descarga el dataset proporcionado por el profesor y ponlo aquí.
+If you don't have the CSV, download the dataset provided for the exercise and put it here.

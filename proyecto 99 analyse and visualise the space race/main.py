@@ -16,7 +16,7 @@ def find_dataset():
     candidates += sorted(PROJECT_DIR.glob('*.xlsx'))
     if not candidates:
         raise FileNotFoundError(
-            'No se encontró un archivo de datos en el proyecto. Coloca el CSV aquí o actualiza DATA_PATH.'
+            'No data file found in the project. Place a CSV here or update DATA_PATH.'
         )
     return candidates[0]
 
@@ -27,7 +27,7 @@ def load_space_data(data_path=None):
         return pd.read_csv(path, low_memory=False)
     if path.suffix.lower() in ['.xls', '.xlsx']:
         return pd.read_excel(path)
-    raise ValueError(f'Formato de archivo no compatible: {path.suffix}')
+    raise ValueError(f'Unsupported file format: {path.suffix}')
 
 
 def clean_space_data(df):
@@ -75,11 +75,11 @@ def clean_space_data(df):
 
 def main():
     df = load_space_data()
-    print('Dataset cargado con', len(df), 'filas y', len(df.columns), 'columnas')
+    print('Dataset loaded with', len(df), 'rows and', len(df.columns), 'columns')
     df = clean_space_data(df)
-    print('Columnas disponibles:', list(df.columns))
-    print('Años mínimos/máximos:', df['launch_year'].min(), df['launch_year'].max())
-    print('Total de éxitos:', int(df['success'].sum() if 'success' in df else 0))
+    print('Available columns:', list(df.columns))
+    print('Min/Max years:', df['launch_year'].min(), df['launch_year'].max())
+    print('Total successes:', int(df['success'].sum() if 'success' in df else 0))
 
 
 if __name__ == '__main__':
