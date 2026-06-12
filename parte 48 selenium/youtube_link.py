@@ -23,7 +23,7 @@ try:
         EC.visibility_of_element_located((By.CSS_SELECTOR, "ytd-channel-name a"))
     )
 
-    print(f"Título: {title_el.text}")
-    print(f"Canal: {channel_el.text}")
+    print(f"Title: {title_el.text}")
+    print(f"Channel: {channel_el.text}")
 finally:
     driver.quit()
