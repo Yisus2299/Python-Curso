@@ -3,7 +3,7 @@ import time
 import random
 
 # ----------------------------
-# CONFIGURACION GENERAL
+# GENERAL CONFIG
 # ----------------------------
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -23,7 +23,7 @@ TOP_MARGIN = 70
 LIVES_START = 3
 
 # ----------------------------
-# PANTALLA
+# SCREEN
 # ----------------------------
 screen = turtle.Screen()
 screen.title("Breakout Clone - Python Turtle")
@@ -37,7 +37,7 @@ screen.tracer(0)
 paddle = turtle.Turtle()
 paddle.shape("square")
 paddle.color("white")
-paddle.shapesize(stretch_wid=1, stretch_len=PADDLE_WIDTH / 20)  # ancho aprox
+    paddle.shapesize(stretch_wid=1, stretch_len=PADDLE_WIDTH / 20)  # approximate width
 paddle.penup()
 paddle.goto(0, -250)
 
@@ -62,7 +62,7 @@ screen.onkeypress(move_left, "a")
 screen.onkeypress(move_right, "d")
 
 # ----------------------------
-# PELOTA
+# BALL
 # ----------------------------
 ball = turtle.Turtle()
 ball.shape("circle")
@@ -78,7 +78,7 @@ def reset_ball():
     ball.dy = BALL_SPEED_Y
 
 # ----------------------------
-# SCORE / VIDAS
+# SCORE / LIVES
 # ----------------------------
 score = 0
 lives = LIVES_START
@@ -96,7 +96,7 @@ def update_hud():
 update_hud()
 
 # ----------------------------
-# BLOQUES
+# BRICKS
 # ----------------------------
 brick_colors = ["#ff4d4d", "#ff944d", "#ffd24d", "#8cff66", "#66ccff"]
 bricks = []
@@ -117,15 +117,15 @@ for row in range(BRICK_ROWS):
         bricks.append(brick)
 
 # ----------------------------
-# UTILIDADES COLISION
+# COLLISION UTILITIES
 # ----------------------------
 def ball_hits_paddle():
-    # Comprobacion AABB simple
+    # Simple AABB check
     bx, by = ball.xcor(), ball.ycor()
     px, py = paddle.xcor(), paddle.ycor()
     half_pw = PADDLE_WIDTH / 2
-    half_ph = 10  # alto aproximado de la paleta
-    radius = 10   # radio aproximado de la pelota
+    half_ph = 10  # approximate paddle height
+    radius = 10   # approximate ball radius
 
     overlap_x = abs(bx - px) <= (half_pw + radius)
     overlap_y = abs(by - py) <= (half_ph + radius)
@@ -151,7 +151,7 @@ def game_over(message):
     text.write(message, align="center", font=("Arial", 24, "bold"))
 
 # ----------------------------
-# BUCLE PRINCIPAL
+# MAIN LOOP
 # ----------------------------
 running = True
 
@@ -159,11 +159,11 @@ while running:
     screen.update()
     time.sleep(0.01)
 
-    # Mover pelota
+    # Move ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
-    # Rebote en paredes laterales
+    # Bounce on side walls
     if ball.xcor() > SCREEN_WIDTH // 2 - 10:
         ball.setx(SCREEN_WIDTH // 2 - 10)
         ball.dx *= -1
@@ -171,23 +171,23 @@ while running:
         ball.setx(-SCREEN_WIDTH // 2 + 10)
         ball.dx *= -1
 
-    # Rebote techo
+    # Bounce on top
     if ball.ycor() > SCREEN_HEIGHT // 2 - 10:
         ball.sety(SCREEN_HEIGHT // 2 - 10)
         ball.dy *= -1
 
-    # Colision con paleta
+    # Collision with paddle
     if ball_hits_paddle():
-        # Rebota hacia arriba
+        # Bounce upwards
         ball.sety(paddle.ycor() + 15)
         ball.dy = abs(ball.dy)
 
-        # Efecto "angulo": segun donde pegue en la paleta
+        # Angle effect: depending on where it hits the paddle
         offset = (ball.xcor() - paddle.xcor()) / (PADDLE_WIDTH / 2)
         ball.dx += offset * 1.2
         ball.dx = max(min(ball.dx, 7), -7)
 
-    # Colision con bloques
+    # Collision with bricks
     hit_brick = None
     for brick in bricks:
         if ball_hits_brick(brick):
@@ -200,10 +200,10 @@ while running:
         score += 10
         update_hud()
 
-        # Rebote simple al romper bloque
+        # Simple bounce when breaking a brick
         ball.dy *= -1
 
-    # Si cae abajo
+    # If it falls below the screen
     if ball.ycor() < -SCREEN_HEIGHT // 2:
         lives -= 1
         update_hud()
@@ -214,7 +214,7 @@ while running:
         else:
             reset_ball()
 
-    # Si no quedan bloques, gana
+    # Win if no bricks left
     if len(bricks) == 0:
         game_over("YOU WIN!")
         running = False

@@ -1,218 +1,212 @@
-# Proyecto 84 - El dia de hoy estare haciendo el juego de Tic Tac Toe en linea de comandos asi que vamos por partes sobre como hacerlo.
-# 1- Lo primero es crear una variable global con las combinaciones ganadoras y utilidades del tablero:
+# Project 84 - Tic Tac Toe command line game implementation.
+# 1- Define global winning combinations and board utilities:
 
-COMBINACIONES = [
+WIN_COMBINATIONS = [
     (0, 1, 2), (3, 4, 5), (6, 7, 8),
     (0, 3, 6), (1, 4, 7), (2, 5, 8),
     (0, 4, 8), (2, 4, 6),
 ]
 
 
-# 2- creamos la funcion que crea el tablero
+# 2- create the board factory
 
-def crear_tablero():
+def create_board():
     return [" "] * 9
 
 
-# 3- creamos la funcion que muestra el tablero
+# 3- display the board
 
-def mostrar_tablero(tablero):
-    def celda(i):
-        return tablero[i] if tablero[i] != " " else str(i + 1)
+def display_board(board):
+    def cell(i):
+        return board[i] if board[i] != " " else str(i + 1)
 
     print()
-    print(f" {celda(0)} | {celda(1)} | {celda(2)} ")
+    print(f" {cell(0)} | {cell(1)} | {cell(2)} ")
     print("---+---+---")
-    print(f" {celda(3)} | {celda(4)} | {celda(5)} ")
+    print(f" {cell(3)} | {cell(4)} | {cell(5)} ")
     print("---+---+---")
-    print(f" {celda(6)} | {celda(7)} | {celda(8)} ")
+    print(f" {cell(6)} | {cell(7)} | {cell(8)} ")
     print()
 
 
-# 4- creamos la funcion que verifica si hay un ganador
+# 4- check for winner
 
-def hay_ganador(tablero, jugador):
+def has_winner(board, player):
     return any(
-        tablero[a] == tablero[b] == tablero[c] == jugador
-        for a, b, c in COMBINACIONES
+        board[a] == board[b] == board[c] == player
+        for a, b, c in WIN_COMBINATIONS
     )
 
 
-# 5- creamos la funcion que verifica si el tablero esta lleno
+# 5- check if board is full
 
-def tablero_lleno(tablero):
-    return " " not in tablero
+def board_full(board):
+    return " " not in board
 
 
-# 6- creamos la funcion que verifica si el movimiento es valido
+# 6- validate moves
 
-def movimiento_valido(tablero, posicion):
-    if posicion < 1 or posicion > 9:
+def valid_move(board, position):
+    if position < 1 or position > 9:
         return False
-    return tablero[posicion - 1] == " "
+    return board[position - 1] == " "
 
 
-# 7- creamos la funcion que aplica la jugada
+# 7- apply a move
 
-def aplicar_jugada(tablero, posicion, jugador):
-    tablero[posicion - 1] = jugador
+def apply_move(board, position, player):
+    board[position - 1] = player
 
 
-# 8- creamos la funcion que pide la jugada del jugador (nosotros):
+# 8- ask human for a move
 
-def pedir_jugada(tablero):
+def ask_move(board):
     while True:
-        entrada = input("Elige casilla (1-9): ").strip()
+        entry = input("Choose a cell (1-9): ").strip()
         try:
-            pos = int(entrada)
+            pos = int(entry)
         except ValueError:
-            print("Escribe un número del 1 al 9.")
+            print("Please enter a number from 1 to 9.")
             continue
-        if movimiento_valido(tablero, pos):
+        if valid_move(board, pos):
             return pos
-        print("Casilla ocupada o fuera de rango. Intenta otra vez.")
+        print("Cell occupied or out of range. Try again.")
 
 
-# 9- creamos la funcion que implementa el algoritmo Minimax para la IA:
+# 9- minimax algorithm for the AI
 
-''' Aclaracion: Minimax es un algoritmo que se utiliza para encontrar la mejor jugada en un juego de dos jugadores.
--- La IA busca la mejor jugada para maximizar su puntuacion (maximizador)
--- El usuario busca la mejor jugada para minimizar la puntuacion de la IA (minimizador)
--- La IA busca la mejor jugada para maximizar su puntuacion
-'''
-
-def minimax(tablero, es_turno_ia, jugador_ia, jugador_humano):
-    if hay_ganador(tablero, jugador_ia):
+def minimax(board, is_ai_turn, ai_player, human_player):
+    if has_winner(board, ai_player):
         return 10
-    if hay_ganador(tablero, jugador_humano):
+    if has_winner(board, human_player):
         return -10
-    if tablero_lleno(tablero):
+    if board_full(board):
         return 0
 
-    if es_turno_ia:
-        mejor = -float("inf")
+    if is_ai_turn:
+        best = -float("inf")
         for i in range(9):
-            if tablero[i] == " ":
-                tablero[i] = jugador_ia
-                puntaje = minimax(tablero, False, jugador_ia, jugador_humano)
-                tablero[i] = " "
-                mejor = max(mejor, puntaje)
-        return mejor
+            if board[i] == " ":
+                board[i] = ai_player
+                score = minimax(board, False, ai_player, human_player)
+                board[i] = " "
+                best = max(best, score)
+        return best
 
-    peor = float("inf")
+    worst = float("inf")
     for i in range(9):
-        if tablero[i] == " ":
-            tablero[i] = jugador_humano
-            puntaje = minimax(tablero, True, jugador_ia, jugador_humano)
-            tablero[i] = " "
-            peor = min(peor, puntaje)
-    return peor
+        if board[i] == " ":
+            board[i] = human_player
+            score = minimax(board, True, ai_player, human_player)
+            board[i] = " "
+            worst = min(worst, score)
+    return worst
 
 
-# 10- creamos la funcion que encuentra la mejor jugada para la IA:
+# 10- find best move for AI
 
-def mejor_jugada_ia(tablero, jugador_ia, jugador_humano):
-    mejor_puntaje = -float("inf")
-    mejor_pos = None
+def best_move_ai(board, ai_player, human_player):
+    best_score = -float("inf")
+    best_pos = None
     for i in range(9):
-        if tablero[i] == " ":
-            tablero[i] = jugador_ia
-            puntaje = minimax(tablero, False, jugador_ia, jugador_humano)
-            tablero[i] = " "
-            if puntaje > mejor_puntaje:
-                mejor_puntaje = puntaje
-                mejor_pos = i + 1
-    return mejor_pos
+        if board[i] == " ":
+            board[i] = ai_player
+            score = minimax(board, False, ai_player, human_player)
+            board[i] = " "
+            if score > best_score:
+                best_score = score
+                best_pos = i + 1
+    return best_pos
 
 
-# 11- creamos la funcion que implementa el modo de juego contra la IA:
+# 11- two-player mode
 
-def jugar_dos_jugadores():
-    tablero = crear_tablero()
-    turno = "X"
+def play_two_players():
+    board = create_board()
+    turn = "X"
 
     while True:
-        mostrar_tablero(tablero)
-        print(f"Turno del jugador {turno}")
-        pos = pedir_jugada(tablero)
-        aplicar_jugada(tablero, pos, turno)
+        display_board(board)
+        print(f"Player {turn}'s turn")
+        pos = ask_move(board)
+        apply_move(board, pos, turn)
 
-        if hay_ganador(tablero, turno):
-            mostrar_tablero(tablero)
-            print(f"¡Ganó el jugador {turno}!")
+        if has_winner(board, turn):
+            display_board(board)
+            print(f"Player {turn} wins!")
             break
-        if tablero_lleno(tablero):
-            mostrar_tablero(tablero)
-            print("Empate.")
+        if board_full(board):
+            display_board(board)
+            print("Draw.")
             break
 
-        turno = "O" if turno == "X" else "X"
+        turn = "O" if turn == "X" else "X"
 
 
-# 12- creamos la funcion que implementa el modo de juego contra la IA:
+# 12- play against AI
 
-def jugar_contra_ia():
-    tablero = crear_tablero()
-    humano = "X"
-    ia = "O"
-    turno_humano = True
+def play_vs_ai():
+    board = create_board()
+    human = "X"
+    ai = "O"
+    human_turn = True
 
-    print("\nEres X. La IA es O.")
-    print("Si quieres tener opciones, intenta ganar o empatar.\n")
+    print("\nYou are X. The AI is O.")
+    print("If you want chances, try to win or draw.\n")
 
     while True:
-        mostrar_tablero(tablero)
+        display_board(board)
 
-        if turno_humano:
-            print("Tu turno (X)")
-            pos = pedir_jugada(tablero)
-            aplicar_jugada(tablero, pos, humano)
+        if human_turn:
+            print("Your turn (X)")
+            pos = ask_move(board)
+            apply_move(board, pos, human)
 
-            if hay_ganador(tablero, humano):
-                mostrar_tablero(tablero)
-                print("¡Ganaste!")
+            if has_winner(board, human):
+                display_board(board)
+                print("You won!")
                 break
-            if tablero_lleno(tablero):
-                mostrar_tablero(tablero)
-                print("Empate.")
+            if board_full(board):
+                display_board(board)
+                print("Draw.")
                 break
 
-            turno_humano = False
+            human_turn = False
         else:
-            print("Turno de la IA...")
-            pos = mejor_jugada_ia(tablero, ia, humano)
-            aplicar_jugada(tablero, pos, ia)
-            print(f"La IA jugó en la casilla {pos}")
+            print("AI is thinking...")
+            pos = best_move_ai(board, ai, human)
+            apply_move(board, pos, ai)
+            print(f"AI played in cell {pos}")
 
-            if hay_ganador(tablero, ia):
-                mostrar_tablero(tablero)
-                print("Ganó la IA.")
+            if has_winner(board, ai):
+                display_board(board)
+                print("AI wins.")
                 break
-            if tablero_lleno(tablero):
-                mostrar_tablero(tablero)
-                print("Empate.")
+            if board_full(board):
+                display_board(board)
+                print("Draw.")
                 break
 
-            turno_humano = True
+            human_turn = True
 
 
-# 13- creamos la funcion que implementa el menu principal:
+# 13- main menu
 
 def main():
     print("=== TIC TAC TOE ===")
-    print("1. Dos jugadores")
-    print("2. Jugar contra la IA")
-    opcion = input("Elige modo (1 o 2): ").strip()
+    print("1. Two players")
+    print("2. Play vs AI")
+    option = input("Choose mode (1 or 2): ").strip()
 
-    if opcion == "1":
-        jugar_dos_jugadores()
-    elif opcion == "2":
-        jugar_contra_ia()
+    if option == "1":
+        play_two_players()
+    elif option == "2":
+        play_vs_ai()
     else:
-        print("Opción no válida.")
+        print("Invalid option.")
 
 
 if __name__ == "__main__":
     main()
 
-# jaja cree una buena IA gracias al minimax pero es casi improbable de ganarle, seria buena idea pedir el tipo de dificultad
+# Note: Minimax AI is strong even more than i expected; it's very hard to beat. Consider adding difficulty levels later.

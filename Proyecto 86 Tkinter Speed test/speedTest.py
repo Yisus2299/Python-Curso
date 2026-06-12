@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 import time
 
-TEXTO_MUESTRA = (
-    "Sometimes you need to go backwards and then fordward to keep it up "
+SAMPLE_TEXT = (
+    "Sometimes you need to go backwards and then forward to keep it up "
 )
 
 def rgb_a_hex(r, g, b):
@@ -12,134 +12,134 @@ def rgb_a_hex(r, g, b):
 class AppSpeedTest:
     def __init__(self, root):
         self.root = root
-        root.title("Test de velocidad de escritura")
+        root.title("Typing Speed Test")
         root.geometry("700x400")
 
-        color_fondo = rgb_a_hex(30, 30, 40)
+        bg_color = rgb_a_hex(30, 30, 40)
 
-        root.configure(bg=color_fondo)
+        root.configure(bg=bg_color)
 
-        frame = tk.Frame(root, bg=color_fondo)
+        frame = tk.Frame(root, bg=bg_color)
         frame.pack(fill="both", expand=True)
 
-        self.texto_objetivo = TEXTO_MUESTRA.strip()
-        self.activo = False
-        self.inicio = None
-        self.duracion = 60  # segundos
-        self.tiempo_restante = self.duracion
+        self.target_text = SAMPLE_TEXT.strip()
+        self.active = False
+        self.start_time = None
+        self.duration = 60  # seconds
+        self.time_left = self.duration
 
-        tk.Label(root, text="Escribe el texto de abajo lo más rápido y preciso que puedas:",
+        tk.Label(root, text="Type the text below as quickly and accurately as you can:",
                  font=("Arial", 11)).pack(pady=8)
 
-        self.lbl_muestra = tk.Label(
-            root, text=self.texto_objetivo, wraplength=650,
+        self.lbl_sample = tk.Label(
+            root, text=self.target_text, wraplength=650,
             justify="left", bg="#2a2a35", fg="white", padx=10, pady=10
         )
-        self.lbl_muestra.pack(fill="x", padx=15)
+        self.lbl_sample.pack(fill="x", padx=15)
 
-        self.caja = tk.Text(root, height=6, font=("Consolas", 12))
-        self.caja.pack(fill="both", expand=True, padx=15, pady=8)
-        self.caja.bind("<KeyRelease>", self.al_escribir)
-        self.caja.config(state="disabled")
+        self.textbox = tk.Text(root, height=6, font=("Consolas", 12))
+        self.textbox.pack(fill="both", expand=True, padx=15, pady=8)
+        self.textbox.bind("<KeyRelease>", self.on_type)
+        self.textbox.config(state="disabled")
 
         frame_info = tk.Frame(root)
         frame_info.pack(pady=5)
-        self.lbl_timer = tk.Label(frame_info, text="Tiempo: 60 s", font=("Arial", 12, "bold"))
+        self.lbl_timer = tk.Label(frame_info, text="Time: 60 s", font=("Arial", 12, "bold"))
         self.lbl_timer.pack(side="left", padx=15)
         self.lbl_wpm = tk.Label(frame_info, text="WPM: 0", font=("Arial", 12, "bold"))
         self.lbl_wpm.pack(side="left", padx=15)
-        self.lbl_precision = tk.Label(frame_info, text="Precisión: 0%", font=("Arial", 12))
-        self.lbl_precision.pack(side="left", padx=15)
+        self.lbl_accuracy = tk.Label(frame_info, text="Accuracy: 0%", font=("Arial", 12))
+        self.lbl_accuracy.pack(side="left", padx=15)
 
         frame_btn = tk.Frame(root)
         frame_btn.pack(pady=10)
-        tk.Button(frame_btn, text="Iniciar", width=12, command=self.iniciar).pack(side="left", padx=5)
-        tk.Button(frame_btn, text="Reiniciar", width=12, command=self.reiniciar).pack(side="left", padx=5)
+        tk.Button(frame_btn, text="Start", width=12, command=self.start).pack(side="left", padx=5)
+        tk.Button(frame_btn, text="Reset", width=12, command=self.reset).pack(side="left", padx=5)
 
-    def caracteres_correctos(self, objetivo, escrito):
-        """Cuenta caracteres correctos en orden (como 'corrected CPM')."""
-        return sum(1 for a, b in zip(escrito, objetivo) if a == b)
+    def correct_chars(self, target, typed):
+        """Count correct characters in order (like 'corrected CPM')."""
+        return sum(1 for a, b in zip(typed, target) if a == b)
 
-    def calcular_wpm(self, escrito, segundos):
-        if segundos <= 0:
+    def calculate_wpm(self, typed, seconds):
+        if seconds <= 0:
             return 0
-        correctos = self.caracteres_correctos(self.texto_objetivo, escrito)
-        minutos = segundos / 60
-        return int((correctos / 5) / minutos)
+        correct = self.correct_chars(self.target_text, typed)
+        minutes = seconds / 60
+        return int((correct / 5) / minutes)
 
-    def calcular_precision(self, escrito):
-        if not escrito:
+    def calculate_accuracy(self, typed):
+        if not typed:
             return 0
-        correctos = self.caracteres_correctos(self.texto_objetivo, escrito)
-        return int((correctos / len(escrito)) * 100)
+        correct = self.correct_chars(self.target_text, typed)
+        return int((correct / len(typed)) * 100)
 
-    def iniciar(self):
-        self.reiniciar(sin_mensaje=True)
-        self.activo = True
-        self.inicio = time.time()
-        self.caja.config(state="normal")
-        self.caja.focus()
+    def start(self):
+        self.reset(no_message=True)
+        self.active = True
+        self.start_time = time.time()
+        self.textbox.config(state="normal")
+        self.textbox.focus()
         self.tick()
 
-    def reiniciar(self, sin_mensaje=False):
-        self.activo = False
-        self.inicio = None
-        self.tiempo_restante = self.duracion
-        self.caja.config(state="normal")
-        self.caja.delete("1.0", "end")
-        self.caja.config(state="disabled")
-        self.lbl_timer.config(text=f"Tiempo: {self.duracion} s")
+    def reset(self, no_message=False):
+        self.active = False
+        self.start_time = None
+        self.time_left = self.duration
+        self.textbox.config(state="normal")
+        self.textbox.delete("1.0", "end")
+        self.textbox.config(state="disabled")
+        self.lbl_timer.config(text=f"Time: {self.duration} s")
         self.lbl_wpm.config(text="WPM: 0")
-        self.lbl_precision.config(text="Precisión: 0%")
+        self.lbl_accuracy.config(text="Accuracy: 0%")
 
     def tick(self):
-        if not self.activo:
+        if not self.active:
             return
-        transcurrido = time.time() - self.inicio
-        self.tiempo_restante = max(0, self.duracion - int(transcurrido))
-        self.lbl_timer.config(text=f"Tiempo: {self.tiempo_restante} s")
+        elapsed = time.time() - self.start_time
+        self.time_left = max(0, self.duration - int(elapsed))
+        self.lbl_timer.config(text=f"Time: {self.time_left} s")
 
-        escrito = self.caja.get("1.0", "end-1c")
-        self.lbl_wpm.config(text=f"WPM: {self.calcular_wpm(escrito, transcurrido)}")
-        self.lbl_precision.config(text=f"Precisión: {self.calcular_precision(escrito)}%")
+        typed = self.textbox.get("1.0", "end-1c")
+        self.lbl_wpm.config(text=f"WPM: {self.calculate_wpm(typed, elapsed)}")
+        self.lbl_accuracy.config(text=f"Accuracy: {self.calculate_accuracy(typed)}%")
 
-        if self.tiempo_restante <= 0:
-            self.finalizar()
+        if self.time_left <= 0:
+            self.finish()
         else:
             self.root.after(200, self.tick)
 
-    def al_escribir(self, event=None):
-        if not self.activo:
+    def on_type(self, event=None):
+        if not self.active:
             return
-        escrito = self.caja.get("1.0", "end-1c")
-        if len(escrito) >= len(self.texto_objetivo):
-            self.finalizar()
+        typed = self.textbox.get("1.0", "end-1c")
+        if len(typed) >= len(self.target_text):
+            self.finish()
 
-    def finalizar(self):
-        if not self.activo:
+    def finish(self):
+        if not self.active:
             return
-        self.activo = False
-        self.caja.config(state="disabled")
+        self.active = False
+        self.textbox.config(state="disabled")
 
-        escrito = self.caja.get("1.0", "end-1c")
-        segundos = min(self.duracion, time.time() - self.inicio)
-        wpm = self.calcular_wpm(escrito, segundos)
-        precision = self.calcular_precision(escrito)
+        typed = self.textbox.get("1.0", "end-1c")
+        seconds = min(self.duration, time.time() - self.start_time)
+        wpm = self.calculate_wpm(typed, seconds)
+        accuracy = self.calculate_accuracy(typed)
 
         if wpm < 40:
-            nivel = "Por debajo del promedio (~40 WPM). ¡Sigue practicando!"
+            level = "Below average (~40 WPM). Keep practicing!"
         elif wpm < 60:
-            nivel = "Velocidad promedio. Vas bien."
+            level = "Average speed. You're doing fine."
         elif wpm < 80:
-            nivel = "Por encima del promedio. Muy bien."
+            level = "Above average. Very good."
         elif wpm < 100:
-            nivel = "Nivel avanzado. Excelente."
+            level = "Advanced level. Excellent."
         else:
-            nivel = "¡Increíble! Nivel experto (100+ WPM)."
+            level = "Amazing! Expert level (100+ WPM)."
 
         messagebox.showinfo(
-            "Resultado",
-            f"WPM: {wpm}\nPrecisión: {precision}%\n\n{nivel}"
+            "Result",
+            f"WPM: {wpm}\nAccuracy: {accuracy}%\n\n{level}"
         )
 
 if __name__ == "__main__":

@@ -5,78 +5,78 @@ from PIL import Image, ImageDraw, ImageFont, ImageTk
 def rgb_a_hex(r, g, b):
     return f"#{r:02x}{g:02x}{b:02x}"
 
-class AppMarcaAgua:
+class AppWatermark:
     def __init__(self, root):
         self.root = root
-        self.imagen = None
+        self.image = None
         self.photo = None
 
-        color_fondo = rgb_a_hex(30, 30, 40)
+        bg_color = rgb_a_hex(30, 30, 40)
 
-        root.configure(bg=color_fondo)
+        root.configure(bg=bg_color)
 
-        frame = tk.Frame(root, bg=color_fondo)
+        frame = tk.Frame(root, bg=bg_color)
         frame.pack(fill="both", expand=True)
 
-        self.entry = Entry(frame, width=40, bg=color_fondo, fg="white")
+        self.entry = Entry(frame, width=40, bg=bg_color, fg="white")
         self.entry.pack(pady=5)
-        self.entry.insert(0, "© Mi nombre")
+        self.entry.insert(0, "© My Name")
 
-        Button(frame, text="Abrir imagen", command=self.abrir).pack(pady=5)
-        Button(frame, text="Aplicar marca", command=self.aplicar).pack(pady=5)
+        Button(frame, text="Open Image", command=self.open_image).pack(pady=5)
+        Button(frame, text="Apply Watermark", command=self.apply_watermark).pack(pady=5)
 
-        Button(frame, text="Guardar", command=self.guardar).pack(pady=5)
-        self.preview = Label(frame, bg=color_fondo)
+        Button(frame, text="Save", command=self.save).pack(pady=5)
+        self.preview = Label(frame, bg=bg_color)
         self.preview.pack()
 
-    def abrir(self):
-        ruta = filedialog.askopenfilename(filetypes=[("Imágenes", "*.png *.jpg *.jpeg")])
-        if not ruta:
+    def open_image(self):
+        path = filedialog.askopenfilename(filetypes=[("Images", "*.png *.jpg *.jpeg")])
+        if not path:
             return
-        self.imagen = Image.open(ruta).convert("RGBA")
-        self.mostrar_preview(self.imagen)
+        self.image = Image.open(path).convert("RGBA")
+        self.show_preview(self.image)
 
-    def aplicar(self):
-        if self.imagen is None:
-            messagebox.showwarning("Aviso", "Primero abre una imagen")
+    def apply_watermark(self):
+        if self.image is None:
+            messagebox.showwarning("Warning", "Open an image first")
             return
-        texto = self.entry.get().strip()
-        if not texto:
-            messagebox.showwarning("Aviso", "Escribe un texto")
+        text = self.entry.get().strip()
+        if not text:
+            messagebox.showwarning("Warning", "Enter watermark text")
             return
 
-        capa = Image.new("RGBA", self.imagen.size, (0, 0, 0, 0))
-        draw = ImageDraw.Draw(capa)
+        layer = Image.new("RGBA", self.image.size, (0, 0, 0, 0))
+        draw = ImageDraw.Draw(layer)
         try:
             font = ImageFont.truetype("arial.ttf", 36)
         except OSError:
             font = ImageFont.load_default()
-        draw.text((20, 20), texto, fill=(255, 255, 255, 160), font=font)
+        draw.text((20, 20), text, fill=(255, 255, 255, 160), font=font)
 
-        self.imagen = Image.alpha_composite(self.imagen, capa)
-        self.mostrar_preview(self.imagen)
+        self.image = Image.alpha_composite(self.image, layer)
+        self.show_preview(self.image)
 
-    def mostrar_preview(self, img):
-        copia = img.copy()
-        copia.thumbnail((500, 500))
-        self.photo = ImageTk.PhotoImage(copia)
+    def show_preview(self, img):
+        copy = img.copy()
+        copy.thumbnail((500, 500))
+        self.photo = ImageTk.PhotoImage(copy)
         self.preview.configure(image=self.photo)
 
-    def guardar(self):
-        if self.imagen is None:
+    def save(self):
+        if self.image is None:
             return
-        ruta = filedialog.asksaveasfilename(defaultextension=".png",
+        path = filedialog.asksaveasfilename(defaultextension=".png",
             filetypes=[("PNG", "*.png"), ("JPEG", "*.jpg")])
-        if not ruta:
+        if not path:
             return
-        salida = self.imagen
-        if ruta.lower().endswith((".jpg", ".jpeg")):
-            salida = self.imagen.convert("RGB")
-        salida.save(ruta)
-        messagebox.showinfo("Listo", "Imagen guardada")
+        out = self.image
+        if path.lower().endswith((".jpg", ".jpeg")):
+            out = self.image.convert("RGB")
+        out.save(path)
+        messagebox.showinfo("Done", "Image saved")
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.title("Marca de agua")
-    AppMarcaAgua(root)
+    root.title("Watermark")
+    AppWatermark(root)
     root.mainloop()
