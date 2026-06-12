@@ -1,16 +1,15 @@
-#Keywords: actualmente si queremos leer, modificar o algo en un archivo txt o el que sea primero
+# Keywords: if we want to read, modify, or process a txt file, first we need a file path
 
-
-import os #importamos os
-#creamos una constantesiguiendo esta formula y le agregamos el archivo txt que tengamos:
-#tenemos 3 formas
-DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "archivo.txt") #1- ese es en caso de que lo tengas en la misma carpeta o lugar
-#2- si esta afuera en el escritorio, hay dos formas:
-DATA_SCREEN = os.path.join(os.path.expanduser("~"), "Desktop", "archivo.txt") #expanduser("~") apunta al perfil del usuario y evita hardcodear ImKen.
-DATA_SCREEN = r"C:\Users\ImKen\Desktop\archivo.txt" #colocamos r"la ruta en la que esta". 
-#3- lo mismo si esta en otra carpeta:
-DATA_SCREEN = "C:/Users/ImKen/Desktop/archivo.txt" #tambien lo podemos hacer sin la r y funciona. pero en lugar de colocar \ colocamos /
+import os # import os module
+# Create a constant using this pattern and add the txt file you want to use:
+# We have three options
+DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "archivo.txt") # 1- use this if the file is in the same folder
+# 2- if it is on the desktop, there are two ways:
+DATA_SCREEN = os.path.join(os.path.expanduser("~"), "Desktop", "archivo.txt") # expanduser("~") points to the user profile and avoids hardcoding ImKen.
+DATA_SCREEN = r"C:\Users\ImKen\Desktop\archivo.txt" # use raw string for the path
+# 3- the same if it is in another folder:
+DATA_SCREEN = "C:/Users/ImKen/Desktop/archivo.txt" # this also works without raw string; use / instead of \
     
-with open(DATA_SCREEN, mode="r", encoding="utf-8") as archivo: #decimos: with open (hacemos lo que haga el mode, en este caso, r = leer) as (el nombre del archivo)
-    contents = archivo.read() # lo guardamos en una variable
-    print(contents) # y lo imprimimos
+with open(DATA_SCREEN, mode="r", encoding="utf-8") as archivo: # with open (mode=r means read) as the file object name
+    contents = archivo.read() # store file contents in a variable
+    print(contents) # print them

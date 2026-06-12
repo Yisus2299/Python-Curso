@@ -11,18 +11,17 @@ finally: haz esto sin importar que suceda
 # hagamos nuestras propias excepciones
 
 # try:
-    # file = open("a_file.txt") # sin la variable, el archivo no existe asi que, habra un error
+    # file = open("a_file.txt") # without the file, this will raise an error
     # a_dictionary = {"Key":"value"}
     # print(a_dictionary["sdsfs"])
 # except FileNotFoundError:
-    # print("Habia un error") #hay un error ya que el archivo de arriba no existe
+    # print("There was an error") # the above file does not exist
     # file = open("a_file.txt", "w")
     # file.write("Something")
 #else:
- # si todo sale bien entonces colocamos esto aqui ya que no hay ninguna excepcion
+ # if everything goes well, this block will execute when there is no exception
 # finally:
-  # se ejecutara sin importar que
-  # raise TypeError, ValueError, etc, etc, etc
+  # this will run regardless of whether an exception was raised
 
 #=====================================================================================================#
 

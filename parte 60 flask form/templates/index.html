@@ -63,7 +63,7 @@
             filter: brightness(1.08);
         }
 
-        .exito {
+        .success {
             font-family: Georgia, "Times New Roman", serif;
             font-weight: bold;
             font-size: 1.5rem;
@@ -73,7 +73,7 @@
 </head>
 <body>
     {% if exito %}
-        <p class="exito">Successfully sent your message</p>
+        <p class="success">Successfully sent your message</p>
     {% else %}
         <form method="post" action="{{ url_for('home') }}">
             <div class="field">

@@ -13,8 +13,8 @@ driver = webdriver.Edge(options=edge_options)
 #Navigate to wikipedia
 driver.get("https://en.wikipedia.org/wiki/Main_Page")
 
-#hone in on anchor tag using CSS selectors (se usan as que todo cuando no hay Clases o IDs y las cosas que buscamos estan en un Div)
-article_count = driver.find_element(By.CSS_SELECTOR, value="#articlecount a") #el # significa ID, el HTML dice: div id="articlecount"
+# Focus on an anchor tag using CSS selectors (use this when elements have no classes or IDs and you need to inspect a div)
+article_count = driver.find_element(By.CSS_SELECTOR, value="#articlecount a") # "#" means ID; the HTML uses div id="articlecount"
 english_article = driver.find_element(By.CSS_SELECTOR, value="#articlecount li:nth-child(2) a")
 print(article_count.text)
 print(english_article.text)

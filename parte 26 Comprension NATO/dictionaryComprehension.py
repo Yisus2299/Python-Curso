@@ -1,39 +1,39 @@
-#partiendo de lo visto anteriormente que mas o menos era asi:
+# Based on what we saw earlier, it was roughly like this:
 
-#nombres_cortos = [name for name in nombres if len(name) < 5]
+# short_names = [name for name in names if len(name) < 5]
 
-#la formula para los diccionarios es la siguiente:
+# The dictionary comprehension formula is:
 
 # new_dict = {new_key:new_value for (key,value) in dict.items()}
 import random
 names = ['Alekk', 'Ryo', 'Zyran', 'Nana']
 
-students_scores = {student:random.randint(1,100) for student in names} #me muestra los diferentes nombres y cada uno tiene un valor random
+students_scores = {student:random.randint(1,100) for student in names} # assigns a random score to each name
 
 
-passed_students = {student:score for (student, score) in students_scores.items()} #Recorre cada par (clave, valor) de students_scores con .items().
-# Para cada par, crea una entrada student: score en un nuevo diccionario.
+passed_students = {student:score for (student, score) in students_scores.items()} # Iterates each pair (key, value) in students_scores using .items().
+# For each pair, it creates an entry student: score in a new dictionary.
 # print(passed_students)
 
 
-# ejercicio 1:
+# exercise 1:
 
 sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
 words = sentence.split()
 result =  {word: len(word) for word in words}
 # print(result)
 
-# ejercicio 2:
+# exercise 2:
 
 weather_c = {"Monday": 12, "Tuesday": 14, "Wednesday": 15, "Thursday": 14, "Friday": 21, "Saturday": 22, "Sunday": 24}
 
-weather_f = {day: (temp_c * 9/5) + 32 for day, temp_c in weather_c.items()} #items es cuando ya hay un valor en el direccion, es decir, Monday: 12 <-- 12 es el valor que regresara
+weather_f = {day: (temp_c * 9/5) + 32 for day, temp_c in weather_c.items()} # items returns key/value pairs from the dictionary, e.g. Monday: 12
 
 # print(weather_f)
 
-semana = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes']
-dias = [dia for dia in semana]
-# print(dias)
+week_days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes']
+days = [day for day in week_days]
+# print(days)
 
 #=======================================================================================================================================================================================#
 

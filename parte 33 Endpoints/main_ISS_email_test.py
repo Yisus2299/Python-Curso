@@ -52,7 +52,7 @@ while True:
                     to_addrs="kenzu603@gmail.com",
                     msg="Subject:Look up\n\nLook up, the ISS is not right there where you think",
                 )
-            break  # <- para que lo mande una vez y termine
+            break  # <- This is for sending it only once and it ends
     except Exception as e:
         print("Error:", e)
         break

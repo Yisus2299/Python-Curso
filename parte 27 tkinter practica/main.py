@@ -6,7 +6,7 @@ from tkinter import *
 
 
 window = Tk()
-window.title("Mi primera Programa GUI") #pone titulo al programa
+window.title("My First GUI Program") # sets the window title
 window.minsize(width=500, height=300)
 
 # Label
@@ -14,32 +14,31 @@ window.minsize(width=500, height=300)
 my_label = Label(window, text="New Text", font=("Arial", 24, "italic"))
 my_label.grid(row=0, column=0, padx=10, pady=10, sticky="w")
 
-#nuevo boton
+# new button
 
 new_button = Button(window, text="New Button")
 new_button.grid(row=0, column=2, padx=10, pady=10)
 
-#Button
+# Button
 
-def boton_pulsado():
-     print("Fui clickeado")
-     new_text = entrada.get()
+def button_clicked():
+     print("Button clicked")
+     new_text = entry.get()
      print(new_text)
-     my_label.config(text=new_text) #text= esto ejecuta lo que le pongas despues de text
+     my_label.config(text=new_text) # text= updates the label with the new text
 
 
-# boton de Click Me:
+# Click Me button:
 
-# boton de Click Me:
-button = Button(window, text="Click Me", command=boton_pulsado)
-button.grid(row=1, column=1, padx=10, pady=10) #es un metodo usado para registrar y posicionar una ventanita con un boton
+button = Button(window, text="Click Me", command=button_clicked)
+button.grid(row=1, column=1, padx=10, pady=10) # grid positions the widget
 
 
 # Entry
 
-entrada = Entry(window, width=20) #crea un recuadro de texto para escribir
-entrada.grid(row=2, column=3, padx=10, pady=10)
-# print(entrada.get()) #muestra por pantalla lo que escribas al darle click me
+entry = Entry(window, width=20) # creates a text input box
+entry.grid(row=2, column=3, padx=10, pady=10)
+# print(entry.get()) # prints the input text when clicked
 
 
 

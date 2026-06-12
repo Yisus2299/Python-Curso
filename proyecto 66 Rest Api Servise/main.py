@@ -107,7 +107,7 @@ def get_random_cafe():
     result = db.session.execute(db.select(Cafe))
     all_cafes = result.scalars().all()
     if not all_cafes:
-        return jsonify(error="No hay cafés en la base de datos. Añade uno con POST /add."), 404
+        return jsonify(error="No cafes found in the database. Add one with POST /add."), 404
     random_cafe = random.choice(all_cafes)
     return jsonify(cafe=cafe_to_dict(random_cafe))
 
