@@ -17,9 +17,9 @@ load_dotenv(dotenv_path=ENV_FILE, override=True)
 
 
 def get_env_value(name: str) -> str:
-    """Lee variables de entorno y limpia errores comunes de formato."""
+    """Read environment variables and clean common formatting errors."""
     value = os.getenv(name) or os.getenv(f"{name} ") or ""
-    # Quita espacios, comillas y caracteres invisibles comunes
+    # remove spaces, quotes and invisible common characters
     cleaned = value.strip().strip('"').strip("'")
     cleaned = cleaned.replace("\u200b", "").replace("\ufeff", "").replace("\u00a0", "")
     return cleaned
@@ -29,17 +29,17 @@ PASSWORD = get_env_value("GMAIL_PASSWORD").replace(" ", "")
 TZ = get_env_value("TZ") or "America/Santiago"
 
 if not EMAIL_SENDER or not PASSWORD:
-    raise ValueError("Faltan EMAIL_SENDER o GMAIL_PASSWORD en el archivo .env")
+    raise ValueError("EMAIL_SENDER or GMAIL_PASSWORD missing in .env file")
 
 print(f"Usando .env en: {ENV_FILE}")
-print(f"CSV_FILE resuelto a: {CSV_FILE}")
+print(f"CSV_FILE resolved to: {CSV_FILE}")
 print(f"EMAIL_SENDER: {EMAIL_SENDER}")
 print(f"GMAIL_PASSWORD length: {len(PASSWORD)}")
 
 try:
     hoy = datetime.now(ZoneInfo(TZ))
 except Exception as e:
-    raise ValueError(f"Zona horaria inválida en TZ: {TZ}") from e
+    raise ValueError(f"Invalid timezone in TZ: {TZ}") from e
 
 mes_hoy, dia_hoy = hoy.month, hoy.day
 
@@ -57,7 +57,7 @@ try:
 
         columnas_requeridas = {"nombre", "email", "mes", "dia"}
         if not reader.fieldnames or not columnas_requeridas.issubset(set(reader.fieldnames)):
-            raise ValueError("El CSV debe tener columnas: nombre,email,mes,dia")
+            raise ValueError("The CSV must have columns: name,email,month,day")
 
         for row in reader:
             try:
@@ -66,29 +66,29 @@ try:
                 mes = int(row["mes"])
                 dia = int(row["dia"])
             except (KeyError, ValueError, AttributeError):
-                print("Fila malformada, se omite.")
+                print("Malformed row, it is omitted.")
                 continue
 
             if not nombre:
-                print("Nombre vacío, se omite fila.")
+                print("Empty name, the row is omitted.")
                 continue
 
             if not email_valido(email):
-                print(f"Email inválido ({email}), se omite fila.")
+                print(f"Invalid email ({email}), the row is omitted.")
                 continue
 
             if not (1 <= mes <= 12) or not (1 <= dia <= 31):
-                print(f"Fecha inválida ({mes}/{dia}) para {nombre}, se omite fila.")
+                print(f"Invalid date ({mes}/{dia}) for {nombre}, the row is omitted.")
                 continue
 
             if mes == mes_hoy and dia == dia_hoy:
                 cumples_hoy.append((nombre, email))
 
 except FileNotFoundError:
-    raise FileNotFoundError(f"No se encontró el archivo {CSV_FILE}")
+    raise FileNotFoundError(f"File not found {CSV_FILE}")
 
 if not cumples_hoy:
-    print("Hoy no hay cumpleaños.")
+    print("Today there are no birthdays.")
     raise SystemExit
 
 context = ssl.create_default_context()
@@ -101,20 +101,20 @@ try:
             msg = EmailMessage()
             msg["From"] = EMAIL_SENDER
             msg["To"] = email
-            msg["Subject"] = f"Para {nombre} en su dia unico y especial 🎉🌙💛🌻🌸"
+            msg["Subject"] = f"For {nombre} on their unique and special day 🎉🌙💛🌻🌸"
             msg.set_content(
-                f"Hola {nombre},\n\n"
+                f"Hello {nombre},\n\n"
                 f"Happy birthday, {nombre}! 🎉🎂\n\n"
-                f"Que tengas un día maravilloso y que todos tus deseos se cumplan.\n\n"
-                f"Con cariño, Jesus\n"
+                f"Have a wonderful day and that all your wishes come true.\n\n"
+                f"With love, Jesus\n"
             )
 
             smtp.send_message(msg)
-            print(f"Enviado a {nombre} <{email}>")
+            print(f"Sent to {nombre} <{email}>")
 
 except smtplib.SMTPAuthenticationError:
     raise ValueError(
-        "Error de autenticación SMTP. Revisa EMAIL_SENDER y GMAIL_PASSWORD (App Password)."
+        "SMTP authentication error. Check EMAIL_SENDER and GMAIL_PASSWORD (App Password)."
     )
 except smtplib.SMTPException as e:
-    raise RuntimeError(f"Error al enviar correos: {e}") from e
+    raise RuntimeError(f"Error sending emails: {e}") from e

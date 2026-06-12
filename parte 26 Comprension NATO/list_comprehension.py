@@ -1,9 +1,9 @@
-numeros = [1,2,3]
-nuevo_numero = [items * 2 for items in numeros]
+numbers = [1,2,3]
+new_number = [items * 2 for items in numbers]
 # print(nuevo_numero)
 
-nombre = "Alekk"
-nueva_lista = [letra for letra in nombre]
+name = "Alekk"
+new_list = [letra for letra in name]
 # print(nueva_lista)
 
 #python sequences
@@ -12,21 +12,21 @@ nueva_lista = [letra for letra in nombre]
 #3- string
 #4- tuple
 
-range_list = [num * 2 for num in range(1,6)]
+range_list = [number * 2 for number in range(1,6)]
 # print(range_list)
 
 # Conditional list comprehension: creamos una condicional adentro de una lista
 
-nombres = ['Alex', 'Beth', 'Calorina', "sarah", "alekk"]
+names = ['Alex', 'Beth', 'Calorina', "sarah", "alekk"]
 
-nombres_cortos = [name for name in nombres if len(name) < 5]
+short_names = [name for name in names if len(name) < 5]
 # print(nombres_cortos)
-nombres_largos = [name.upper() for name in nombres if len(name) >= 5]
-# print(nombres_largos)
+long_names = [name.upper() for name in names if len(name) >= 5]
+# print(long_names)
 
 numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 squared_numbers = [n ** 2 for n in numbers]
-# print(squared_numbers)
+# print(squared_numbers) 
 
 list_of_strings = ['9', '0', '32', '8', '2', '8', '64', '29', '42', '99']
 numbers = [int(numero) for numero in list_of_strings]

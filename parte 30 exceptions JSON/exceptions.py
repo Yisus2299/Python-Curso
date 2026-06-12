@@ -8,7 +8,7 @@ else: do this if there are no exceptions
 finally: do this regardless of what happens
 '''
 
-# hagamos nuestras propias excepciones
+# lets make our own exceptions
 
 # try:
     # file = open("a_file.txt") # without the file, this will raise an error
