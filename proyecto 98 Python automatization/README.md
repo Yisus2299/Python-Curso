@@ -1,51 +1,51 @@
 # Organize Downloads
 
-Qué hace:
-- Ordena la carpeta `Downloads` por categoría (Imágenes, Videos, Documentos, Audio, Archivos, Instaladores, Código, Others).
-- Dentro de cada categoría crea subcarpetas por fecha `YYYY-MM-DD` (usa fecha de modificación por defecto).
-- Ignora archivos temporales (.crdownload, .part, .tmp, .partial).
-- Renombra duplicados añadiendo " (n)".
-- Modo one-shot y modo monitor en tiempo real.
+What it does:
+- Organizes the `Downloads` folder into categories (Images, Videos, Documents, Audio, Archives, Installers, Code, Others).
+- Creates date-based subfolders (`YYYY-MM-DD`) inside each category (uses modification time by default).
+- Ignores temporary download files (.crdownload, .part, .tmp, .partial).
+- Renames duplicates by appending " (n)".
+- Supports one-shot run and real-time watch mode.
 
-Archivos
-- `organize_downloads.py` : script principal.
-- `requirements.txt` : dependencias opcionales (watchdog).
+Files
+- `organize_downloads.py`: main script.
+- `requirements.txt`: optional dependencies (for `watchdog`).
 
-Requisitos
-- Python 3.8+ (recomiendo 3.10+).
-- (Opcional) `pip install -r requirements.txt` para usar `--watch`.
+Requirements
+- Python 3.8+ (3.10+ recommended).
+- (Optional) `pip install -r requirements.txt` to enable `--watch`.
 
-Uso
-- Ejecutar una vez (auto-detecta Downloads):
+Usage
+- Run once (auto-detects Downloads):
   ```powershell
   python organize_downloads.py
   ```
-- Ejecutar sobre ruta concreta:
+- Run against a specific path:
   ```powershell
-  python organize_downloads.py --path "C:\Users\TuUsuario\Downloads"
+  python organize_downloads.py --path "C:\Users\YourUser\Downloads"
   ```
-- Simular sin mover (recomendado para pruebas):
+- Simulate without moving files (recommended for testing):
   ```powershell
   python organize_downloads.py --dry-run
   ```
-- Modo monitor (requiere watchdog):
+- Watch mode (requires `watchdog`):
   ```powershell
   pip install -r requirements.txt
   python organize_downloads.py --watch
   ```
-- Si `python` no funciona en PowerShell, usa el lanzador incluido:
+- If `python` is not available in PowerShell, use the bundled launcher:
   ```powershell
   .\run_organize_downloads.bat --dry-run
   .\run_organize_downloads.bat
   ```
 
-Opciones útiles
-- `--date-by mtime|ctime|now` : elegir fecha para carpetas.
-- `--log <archivo>` : archivo de log (por defecto `organize_downloads.log`).
+Useful options
+- `--date-by mtime|ctime|now`: choose which timestamp to use for folders.
+- `--log <file>`: log file (default `organize_downloads.log`).
 
-Notas de seguridad
-- Revisa `organize_downloads.log` si algo no sale como esperas.
-- Si quieres excluir tipos o carpetas, edita `DEFAULT_MAP` en el script.
+Security notes
+- Review `organize_downloads.log` if anything unexpected happens.
+- To exclude file types or folders, edit `DEFAULT_MAP` in the script.
 
-Pruebas
-- Haz primero `--dry-run` para ver acciones sin mover archivos.
+Testing
+- Use `--dry-run` first to preview actions without moving files.

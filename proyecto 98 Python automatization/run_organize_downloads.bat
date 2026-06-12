@@ -37,7 +37,7 @@ if defined PYTHON_EXE (
     exit /b %ERRORLEVEL%
 )
 
-echo No se encontró Python en el PATH ni en las ubicaciones habituales.
-echo Instala Python desde https://www.python.org/downloads/ y marca "Add Python to PATH".
-echo También puedes ejecutar el script usando la ruta completa a python.exe.
+echo Python was not found in PATH or in common install locations.
+echo Install Python from https://www.python.org/downloads/ and enable "Add Python to PATH" during installation.
+echo Alternatively, run the script using the full path to python.exe.
 pause
