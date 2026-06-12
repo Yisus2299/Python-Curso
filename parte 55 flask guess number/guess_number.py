@@ -3,7 +3,7 @@ import random
 
 app = Flask(__name__)
 
-# 3) Genera un número aleatorio (0 a 9) una sola vez al arrancar el servidor
+# 3) Generate a single secret number (0-9) when the server starts
 SECRET_NUMBER = random.randint(0, 9)
 
 
@@ -11,13 +11,13 @@ SECRET_NUMBER = random.randint(0, 9)
 def home():
     return (
         '<h1 style="color: black; text-align:center;">Guess a number between 0 and 9</h1>'
-        '<p style="text-align:center;">Escribe un número en la URL, por ejemplo: /3</p>'
-        # Pon aquí tu imagen luego (puede ser URL o un archivo estático)
+        '<p style="text-align:center;">Type a number in the URL, for example: /3</p>'
+        # You can replace the placeholder image with your own static file or URL
         '<div style="text-align:center;"><img src="https://via.placeholder.com/300" width="300"></div>'
     )
 
 
-# 4) Ruta que detecta el número en la URL y lo compara con el secreto
+# 4) Route that receives a number in the URL and compares it with the secret
 @app.route("/<int:guess>")
 def check_guess(guess: int):
     if guess < SECRET_NUMBER:
@@ -37,5 +37,5 @@ def check_guess(guess: int):
         )
 
 
-if __name__ == "__main__": #esto lo ejecuta
+if __name__ == "__main__":
     app.run(debug=True)

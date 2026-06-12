@@ -8,7 +8,7 @@ from email.message import EmailMessage
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent
-# Tu .env está en templates/; si lo pasas a la raíz del proyecto, usa: BASE_DIR / ".env"
+# Your .env file is stored in templates/ in this project; if you move it to the project root use: BASE_DIR / ".env"
 ENV_FILE = BASE_DIR / "templates" / ".env"
 load_dotenv(dotenv_path=ENV_FILE, override=True)
 
@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 
 def get_env_value(name: str) -> str:
-    """Lee variables de entorno y limpia formato habitual (.env con espacios, comillas, BOM)."""
+    """Read environment variables and clean common .env formatting issues."""
     value = os.getenv(name) or ""
     cleaned = value.strip().strip('"').strip("'")
     cleaned = cleaned.replace("\u200b", "").replace("\ufeff", "").replace("\u00a0", "")
@@ -25,26 +25,26 @@ def get_env_value(name: str) -> str:
 
 EMAIL_SENDER = get_env_value("EMAIL_SENDER")
 GMAIL_PASSWORD = get_env_value("GMAIL_PASSWORD").replace(" ", "")
-# Opcional en .env: EMAIL_TO=tuotro@correo.com  Si no existe, se envía a ti mismo (EMAIL_SENDER).
+# Optional in .env: EMAIL_TO=other@domain.com. If not set, messages are sent to EMAIL_SENDER.
 EMAIL_TO = get_env_value("EMAIL_TO") or EMAIL_SENDER
 
 
-def enviar_correo_formulario(nombre: str, email: str, password: str, mensaje: str) -> None:
+def send_form_email(name: str, email: str, password: str, message_text: str) -> None:
     if not EMAIL_SENDER or not GMAIL_PASSWORD:
-        raise ValueError("Faltan EMAIL_SENDER o GMAIL_PASSWORD en el archivo .env")
+        raise ValueError("EMAIL_SENDER or GMAIL_PASSWORD missing in .env file")
 
     msg = EmailMessage()
     msg["From"] = EMAIL_SENDER
     msg["To"] = EMAIL_TO
-    msg["Subject"] = "Nuevo envío desde el formulario web"
+    msg["Subject"] = "New submission from web form"
 
-    cuerpo = (
-        f"Name: {nombre}\n"
+    body = (
+        f"Name: {name}\n"
         f"Email: {email}\n"
-        f"Password (formulario): {password}\n"
-        f"Message:\n{mensaje}\n"
+        f"Password (form): {password}\n"
+        f"Message:\n{message_text}\n"
     )
-    msg.set_content(cuerpo)
+    msg.set_content(body)
 
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
@@ -56,26 +56,26 @@ def enviar_correo_formulario(nombre: str, email: str, password: str, mensaje: st
 def home():
     error = None
     if request.method == "POST":
-        nombre = request.form.get("name", "").strip()
+        name = request.form.get("name", "").strip()
         email = request.form.get("email", "").strip()
         password = request.form.get("password", "")
-        mensaje = request.form.get("message", "").strip()
+        message_text = request.form.get("message", "").strip()
 
-        print(nombre)
+        print(name)
         print(email)
         print(password)
-        print(mensaje)
+        print(message_text)
 
         try:
-            enviar_correo_formulario(nombre, email, password, mensaje)
+            send_form_email(name, email, password, message_text)
         except (ValueError, smtplib.SMTPException, OSError) as e:
-            print("Error al enviar correo:", e)
-            error = "No se pudo enviar el correo. Revisa la consola del servidor y el archivo .env."
-            return render_template("index.html", exito=False, error=error)
+            print("Error sending email:", e)
+            error = "Unable to send email. Check server console and .env file."
+            return render_template("index.html", success=False, error=error)
 
-        return render_template("index.html", exito=True, error=None)
+        return render_template("index.html", success=True, error=None)
 
-    return render_template("index.html", exito=False, error=None)
+    return render_template("index.html", success=False, error=None)
 
 
 if __name__ == "__main__":
