@@ -1,23 +1,23 @@
-#crear tus propias clases
-#Constructor def __init__(self)
+# create your own classes
+# Constructor def __init__
 
-#aprendimos a crear una funcion constructor, agregar metodos a las clases y crear clases
+# we learned to create a constructor function, add methods to classes, and create classes
 
 
 # class User: 
-#     def __init__(self, user_id, username): #self es lo que esta siendo inicializado adentro de la funcion
+#     def __init__(self, user_id, username): # self is what is being initialized inside the function
 #        self.id = user_id
 #        self.username = username
 #        self.followers = 0
 #        self.following = 0
 
-#     #agregar metodos a las clases
+#     # add methods to classes
 
 #     def follow(self, user):
 #         user.followers += 1
 #         self.following += 1
 
-# #cada vez que la funcion constructor se emplea, se ejecuta lo de adentro de la funcion
+# # every time the constructor function is used, the inside of the function executes
 # user_1 = User("001", "Jesus",)
 # user_2 = User("002", "Alekk",)
 
@@ -34,7 +34,7 @@
 #             return self.num_eyes
 
 #         def breathe(self):
-#             print("si respira")
+#             print("it breathes")
 
 # class Fish(Animal):
 
@@ -47,24 +47,22 @@
 
 #         def breathe(self):
 #               super().breathe() 
-#               print("debajo del agua")
+#               print("underwater")
 
-#         def nadar(self):
-#             print("Se mueve adentro del agua")
+#         def swim(self):
+#             print("It moves inside the water")
     
 # nemo = Fish()
 # print(nemo.eyes())
-# nemo.nadar()
+# nemo.swim()
 # nemo.breathe()
 
 #=========================================================================================================================#
 
 piano_keys = ['a','b','c','d','e','f','g']
 
-#print(piano_keys[2:5]) #slice, el primero contamos desde 0 y para el segundo contamos desde 1
+#print(piano_keys[2:5]) # slice, the first index counts from 0 and the second counts from 1
 #print(piano_keys[2:])
 #print(piano_keys[:5])
 print(piano_keys[2:5:2])
-                #c 
-
-
+                # c
