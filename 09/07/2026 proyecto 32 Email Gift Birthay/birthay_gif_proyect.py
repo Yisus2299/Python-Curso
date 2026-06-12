@@ -10,7 +10,7 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent
-CSV_FILE = BASE_DIR / "cumples.csv"
+CSV_FILE = BASE_DIR / "birthdays.csv"
 ENV_FILE = BASE_DIR / ".env"
 
 load_dotenv(dotenv_path=ENV_FILE, override=True)
