@@ -1,6 +1,6 @@
 # Birthday Email Gift Project
 
-An automated Python application that sends birthday greeting emails to people in a CSV file.
+This is an automated Python application that sends birthday greeting emails to people in a CSV file.
 
 ## Overview
 
@@ -310,4 +310,4 @@ Python 3.9+ for zoneinfo module (use `pytz` for older versions).
 
 ## License
 
-(Just in case, this project is for educational purposes, i don't know own anything of all this plus it's just a practice.)
+(Just in case, this project is just for educational purposes, i don't know own anything of all this plus it's just a practice.)
